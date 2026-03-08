@@ -7,4 +7,8 @@
     <color name="background">#EBF2FF</color>
     <color name="background_dark">#070D1A</color>
     <color name="down">#CACBCD</color>
+    <color name="inputs">#D6E4FF</color>
+    <color name="inputs_dark">#2D3142</color>
+    <color name="link">#5B7BFE</color>
+
 </resources>

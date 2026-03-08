@@ -5,4 +5,14 @@
     <string name="ways">Маршруты</string>
     <string name="achievments">Достижения</string>
     <string name="registration">Регистрация</string>
+    <string name="name">Имя</string>
+    <string name="your_name">Ваше имя</string>
+    <string name="singUp">Зарегестрироваться</string>
+    <string name="create_password">Придумайте пароль</string>
+    <string name="enter">Войти</string>
+    <string name="login">Вход</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="enter_email">Введите Email</string>
+    <string name="email">Ваш Email</string>
+    <string name="loginTo">Войти</string>
 </resources>

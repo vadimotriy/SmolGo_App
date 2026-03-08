@@ -1,6 +1,5 @@
 package com.example.smolgo.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,13 +11,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.smolgo.R;
 
-public class SignUpActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_login);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -26,11 +25,10 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    public void signUp(View view) {
+    public void login(View view) {
     }
 
-    public void login(View view) {
-        Intent login = new Intent(this, LoginActivity.class);
-        startActivity(login);
+    public void signUp(View view) {
+        finish();
     }
 }
