@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SmolGo</string>
+    <string name="next">Далее</string>
+    <string name="quests">Квесты</string>
+    <string name="ways">Маршруты</string>
+    <string name="achievments">Достижения</string>
+    <string name="registration">Регистрация</string>
 </resources>
