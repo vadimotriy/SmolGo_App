@@ -4,6 +4,7 @@
         <item name="android:windowBackground">@color/background</item>
         <item name="colorOnSurface">@color/black</item>
         <item name="colorSurface">@color/inputs</item>
+        <item name="colorOnBackground">@color/bottom_light</item>
 
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->

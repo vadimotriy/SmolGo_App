@@ -28,4 +28,12 @@ public class SharedManager {
     public void setIsLogin(boolean state) {
         prefs.edit().putBoolean("isLogin", state).apply();
     }
+
+    public int getQuests() {
+        return prefs.getInt("quests", 0);
+    }
+
+    public void addQuests() {
+        prefs.edit().putInt("quests", getQuests() + 1).apply();
+    }
 }

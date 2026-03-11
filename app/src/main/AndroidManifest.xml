@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmolGo"
-        android:usesCleartextTraffic="true" >
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.WaysActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"
             android:exported="false" />

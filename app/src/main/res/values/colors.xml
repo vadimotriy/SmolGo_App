@@ -9,6 +9,9 @@
     <color name="down">#CACBCD</color>
     <color name="inputs">#D6E4FF</color>
     <color name="inputs_dark">#2D3142</color>
-    <color name="link">#5B7BFE</color>
+    <color name="link">#2E6CF2</color>
+
+    <color name="bottom_light">#FFFFFF</color>
+    <color name="bottom_dark">#040810</color>
 
 </resources>

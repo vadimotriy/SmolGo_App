@@ -15,4 +15,11 @@
     <string name="enter_email">Введите Email</string>
     <string name="email">Ваш Email</string>
     <string name="loginTo">Войти</string>
+    <string name="main">Главная</string>
+    <string name="settings">Настройки</string>
+    <string name="welcome">Добро пожаловать в Смоленск!</string>
+    <string name="quests_">Квестов</string>
+    <string name="ways_">Маршрутов</string>
+    <string name="achievments_">Достижений</string>
+    <string name="start_learning">Начать изучение</string>
 </resources>

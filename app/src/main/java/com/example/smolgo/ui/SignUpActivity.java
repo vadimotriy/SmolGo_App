@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.smolgo.R;
 import com.example.smolgo.controller.Api;
+import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONObject;
@@ -28,6 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SignUpActivity extends AppCompatActivity {
     TextInputEditText nameInput, emailInput, passwordInput;
+    SharedManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +41,11 @@ public class SignUpActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.email);
         passwordInput = findViewById(R.id.password);
 
+        manager = SharedManager.getInstance(this);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom);
             return insets;
         });
     }
@@ -51,28 +55,14 @@ public class SignUpActivity extends AppCompatActivity {
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
 
-        Retrofit r = new Retrofit.Builder().baseUrl("http://10.0.0.2:8000/")
-                .addConverterFactory(GsonConverterFactory.create()).build();
+        if (email == "vblinov2009@mail.ru") {
+            Toast.makeText(this, "Email уже занят", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        r.create(Api.class).signUp(Map.of("name", name, "email", email, "password", password))
-                .enqueue(new Callback<>() {
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        try {
-                            JSONObject json = new JSONObject(response.body().string());
-                            String result = json.getString("message");
-
-                            Toast.makeText(SignUpActivity.this, result, Toast.LENGTH_SHORT).show();
-
-                        } catch (Exception e) {
-                            Toast.makeText(SignUpActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    public void onFailure(Call<ResponseBody> c, Throwable t) {
-                        Toast.makeText(SignUpActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                    }
-
-                });
-
+        manager.setIsLogin(true);
+        Intent mainScreen = new Intent(this, MainScreenActivity.class);
+        startActivity(mainScreen);
     }
 
     public void login(View view) {
