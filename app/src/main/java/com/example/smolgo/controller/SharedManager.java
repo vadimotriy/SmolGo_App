@@ -36,4 +36,20 @@ public class SharedManager {
     public void addQuests() {
         prefs.edit().putInt("quests", getQuests() + 1).apply();
     }
+
+    public int getWays() {
+        return prefs.getInt("ways", 0);
+    }
+
+    public void addWays() {
+        prefs.edit().putInt("ways", getWays() + 1).apply();
+    }
+
+    public int getAchievments() {
+        return prefs.getInt("achievments", 0);
+    }
+
+    public void addAchievments() {
+        prefs.edit().putInt("achievments", getAchievments() + 1).apply();
+    }
 }

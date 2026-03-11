@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,9 +17,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainScreenActivity extends AppCompatActivity {
     SharedManager manager;
+    BottomNavigationView bottomNavigationView;
+    TextView ways, quests, achievments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,40 @@ public class MainScreenActivity extends AppCompatActivity {
             startActivity(activity);
         }
 
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+
+            if (id == R.id.navigation_home) {
+                return true;
+            } else if (id == R.id.navigation_ways) {
+                startActivity(new Intent(this, WaysActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
+            } else if (id == R.id.navigation_quests) {
+                startActivity(new Intent(this, QuestsActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
+            } else if (id == R.id.navigation_achievmnets) {
+                startActivity(new Intent(this, AchievmetsActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
+            } else if (id == R.id.navigation_settings) {
+                startActivity(new Intent(this, SettingsActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
+            }
+            return false;
+        });
+
+        ways = findViewById(R.id.ways_number);
+        quests = findViewById(R.id.quests_number);
+        achievments = findViewById(R.id.achievments_number);
+
+        ways.setText(Integer.toString(manager.getWays()));
+        quests.setText(Integer.toString(manager.getQuests()));
+        achievments.setText(Integer.toString(manager.getAchievments()));
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0);
@@ -40,6 +78,14 @@ public class MainScreenActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+    }
+
     public void activityWays(View view) {
+        startActivity(new Intent(this, WaysActivity.class));
+        overridePendingTransition(0, 0);
     }
 }

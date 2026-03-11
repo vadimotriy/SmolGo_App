@@ -13,6 +13,15 @@
         android:theme="@style/Theme.SmolGo"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AchievmetsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.QuestsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.WaysActivity"
             android:exported="false" />
         <activity

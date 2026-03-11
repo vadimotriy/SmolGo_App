@@ -13,7 +13,7 @@ import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class WaysActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
 
@@ -21,7 +21,7 @@ public class WaysActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_ways);
+        setContentView(R.layout.activity_settings);
 
         manager = SharedManager.getInstance(this);
 
@@ -31,14 +31,18 @@ public class WaysActivity extends AppCompatActivity {
         }
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_ways);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
 
-            if (id == R.id.navigation_ways) {
+            if (id == R.id.navigation_settings) {
                 return true;
             } else if (id == R.id.navigation_home) {
                 startActivity(new Intent(this, MainScreenActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
+            } else if (id == R.id.navigation_ways) {
+                startActivity(new Intent(this, WaysActivity.class));
                 overridePendingTransition(0, 0);
                 return true;
             } else if (id == R.id.navigation_quests) {
@@ -47,10 +51,6 @@ public class WaysActivity extends AppCompatActivity {
                 return true;
             } else if (id == R.id.navigation_achievmnets) {
                 startActivity(new Intent(this, AchievmetsActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
-            } else if (id == R.id.navigation_settings) {
-                startActivity(new Intent(this, SettingsActivity.class));
                 overridePendingTransition(0, 0);
                 return true;
             }
@@ -67,6 +67,6 @@ public class WaysActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        bottomNavigationView.setSelectedItemId(R.id.navigation_ways);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
     }
 }
