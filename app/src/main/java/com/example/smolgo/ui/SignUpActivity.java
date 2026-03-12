@@ -61,6 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
         manager.setIsLogin(true);
+        manager.setName(name);
         Intent mainScreen = new Intent(this, MainScreenActivity.class);
         startActivity(mainScreen);
     }

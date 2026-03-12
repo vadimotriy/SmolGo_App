@@ -22,4 +22,6 @@
     <string name="ways_">Маршрутов</string>
     <string name="achievments_">Достижений</string>
     <string name="start_learning">Начать изучение</string>
+    <string name="exit">Выйти</string>
+    <string name="hello">Здравствуй,</string>
 </resources>

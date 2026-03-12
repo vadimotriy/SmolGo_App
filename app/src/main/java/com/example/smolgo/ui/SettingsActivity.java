@@ -2,6 +2,8 @@ package com.example.smolgo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class SettingsActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
+    TextView helloName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,9 @@ public class SettingsActivity extends AppCompatActivity {
             return false;
         });
 
+        helloName = findViewById(R.id.helloName);
+        helloName.setText(helloName.getText().toString() + " " + manager.getName() + "!");
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0);
@@ -68,5 +74,11 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
+    }
+
+    public void logout(View view) {
+        manager.setIsLogin(false);
+        startActivity(new Intent(this, SignUpActivity.class));
+        overridePendingTransition(0, 0);
     }
 }

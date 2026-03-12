@@ -52,4 +52,12 @@ public class SharedManager {
     public void addAchievments() {
         prefs.edit().putInt("achievments", getAchievments() + 1).apply();
     }
+
+    public String getName() {
+        return prefs.getString("name", "");
+    }
+
+    public void setName(String name) {
+        prefs.edit().putString("name", name).apply();
+    }
 }
