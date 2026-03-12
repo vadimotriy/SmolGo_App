@@ -24,4 +24,7 @@
     <string name="start_learning">Начать изучение</string>
     <string name="exit">Выйти</string>
     <string name="hello">Здравствуй,</string>
+    <string name="your_achievments">Ваши достижения:</string>
+    <string name="achiev_ways">Маршруты</string>
+    <string name="complete">Пройдено:</string>
 </resources>

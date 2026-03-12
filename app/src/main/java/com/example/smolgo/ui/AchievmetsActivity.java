@@ -2,6 +2,8 @@ package com.example.smolgo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,10 +14,13 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 public class AchievmetsActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
+    ProgressBar barWays, barQuests;
+    TextView numWays, numQuests;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +61,18 @@ public class AchievmetsActivity extends AppCompatActivity {
             }
             return false;
         });
+
+        barWays = findViewById(R.id.progressBarWays);
+        barWays.setProgress(manager.getWays());
+
+        barQuests = findViewById(R.id.progressBarQuests);
+        barQuests.setProgress(manager.getQuests());
+
+        numWays = findViewById(R.id.ways_number);
+        numWays.setText(Integer.toString(manager.getWays()));
+
+        numQuests = findViewById(R.id.quests_number);
+        numQuests.setText(Integer.toString(manager.getQuests()));
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

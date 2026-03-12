@@ -7,6 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".ui.AchievmetsActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/your_achievments"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08" />
+
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -23,5 +41,153 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/bottom_nav_menu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        android:background="@drawable/card"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="left"
+            android:text="@string/ways"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="32sp"
+            android:drawablePadding="15dp"
+            android:drawableEnd="@drawable/ic_ways_small"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="left"
+                android:text="@string/complete"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="24dp"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/ways_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="right"
+                android:text="0"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="24sp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:layout_marginTop="30dp"
+            android:id="@+id/progressBarWays"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+
+            android:max="2"
+            android:progress="0"
+
+            android:progressTint="@color/title"
+            android:progressBackgroundTint="?attr/colorSecondary"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        android:background="@drawable/card"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="left"
+            android:text="@string/quests"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="32sp"
+            android:drawablePadding="15dp"
+            android:drawableEnd="@drawable/ic_quests_small"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="left"
+                android:text="@string/complete"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="24dp"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/quests_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="right"
+                android:text="0"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="24sp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:layout_marginTop="30dp"
+            android:id="@+id/progressBarQuests"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+
+            android:max="1"
+            android:progress="0"
+
+            android:progressTint="@color/title"
+            android:progressBackgroundTint="?attr/colorSecondary"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
