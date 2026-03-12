@@ -27,4 +27,7 @@
     <string name="your_achievments">Ваши достижения:</string>
     <string name="achiev_ways">Маршруты</string>
     <string name="complete">Пройдено:</string>
+    <string name="wall">Крепостная стена</string>
+    <string name="status">Статус:</string>
+    <string name="time">Время прохождения:</string>
 </resources>

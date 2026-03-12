@@ -60,4 +60,23 @@ public class SharedManager {
     public void setName(String name) {
         prefs.edit().putString("name", name).apply();
     }
+
+
+
+    public int getAngel() {
+        return prefs.getInt("angel", 0);
+    }
+
+    public void setAngel(int num) {
+        prefs.edit().putInt("angel", num).apply();
+    }
+
+    public int getAngelStatus() {
+        return prefs.getInt("angel_status", 0);
+    }
+
+    public void setAngelStatus(int num) {
+        prefs.edit().putInt("angel_status", num).apply();
+    }
+
 }

@@ -7,6 +7,8 @@
         <item name="colorSurface">@color/inputs</item>
         <item name="colorOnBackground">@color/bottom_light</item>
         <item name="colorSecondary">@color/down</item>
+        <item name="colorOnError">@color/secondary_text_light</item>
+
 
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->

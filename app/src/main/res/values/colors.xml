@@ -10,8 +10,10 @@
     <color name="inputs">#D6E4FF</color>
     <color name="inputs_dark">#2D3142</color>
     <color name="link">#2E6CF2</color>
-
+    <color name="green">#00B5AE</color>
     <color name="bottom_light">#FFFFFF</color>
     <color name="bottom_dark">#040810</color>
 
+    <color name="secondary_text_light">#656872</color>
+    <color name="secondary_text_dark">#8B8E95</color>
 </resources>

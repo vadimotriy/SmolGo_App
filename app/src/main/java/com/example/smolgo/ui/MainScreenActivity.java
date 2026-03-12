@@ -67,7 +67,7 @@ public class MainScreenActivity extends AppCompatActivity {
         quests = findViewById(R.id.quests_number);
         achievments = findViewById(R.id.achievments_number);
 
-        ways.setText(Integer.toString(manager.getWays()));
+        ways.setText(Integer.toString(Math.min(manager.getWays(), 1)));
         quests.setText(Integer.toString(manager.getQuests()));
         achievments.setText(Integer.toString(manager.getAchievments()));
 

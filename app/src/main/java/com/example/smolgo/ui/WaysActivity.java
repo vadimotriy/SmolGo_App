@@ -1,7 +1,12 @@
 package com.example.smolgo.ui;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +21,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class WaysActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
+
+    TextView statusAngel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +64,17 @@ public class WaysActivity extends AppCompatActivity {
             return false;
         });
 
+        statusAngel = findViewById(R.id.status_angel);
+
+        switch (manager.getAngelStatus()) {
+            case 0:
+                statusAngel.setText("Не пройдено");  break;
+            case 1:
+                statusAngel.setText("В процессе");  break;
+            case 2:
+                statusAngel.setText("Пройдено");  break;
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0);
@@ -68,5 +86,26 @@ public class WaysActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         bottomNavigationView.setSelectedItemId(R.id.navigation_ways);
+
+        switch (manager.getAngelStatus()) {
+            case 0:
+                statusAngel.setText("Не пройдено");  break;
+            case 1:
+                statusAngel.setText("В процессе");  break;
+            case 2:
+                statusAngel.setText("Пройдено");  break;
+        }
+    }
+
+    public void angelWay(View view) {
+        manager.setAngelStatus(1);
+        startActivity(new Intent(this, AngelWayActivity.class));
+        overridePendingTransition(0, 0);
+    }
+
+    public void wallWay(View view) {
+        Toast.makeText(this, "В разработке", LENGTH_SHORT);
+//        startActivity(new Intent(this, WallWayActivity.class));
+//        overridePendingTransition(0, 0);
     }
 }
