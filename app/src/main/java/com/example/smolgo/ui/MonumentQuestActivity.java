@@ -84,7 +84,7 @@ public class MonumentQuestActivity extends AppCompatActivity {
             return;
         }
 
-        if (num == 6) { manager.setMonument(0); manager.setMonumentStatus(2); manager.addQuests(); finish(); }
+        if (num == 5) { manager.setMonument(0); manager.setMonumentStatus(2); manager.addQuests(); finish(); }
         else {
             label.setText(labelsText[num]);
             about.setText(aboutText[num]);

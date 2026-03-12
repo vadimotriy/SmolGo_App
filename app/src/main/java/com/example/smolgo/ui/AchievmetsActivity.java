@@ -72,7 +72,7 @@ public class AchievmetsActivity extends AppCompatActivity {
         numWays.setText(Integer.toString(Math.min(manager.getWays(), 2)));
 
         numQuests = findViewById(R.id.quests_number);
-        numQuests.setText(Integer.toString(manager.getQuests()));
+        numQuests.setText(Integer.toString(Math.min(manager.getQuests(), 1)));
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
