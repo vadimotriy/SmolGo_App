@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SmolGo</string>
+    <string name="next">Далей</string>
+    <string name="quests">Квесты</string>
+    <string name="ways">Маршруты</string>
+    <string name="achievments">Дасягненні</string>
+    <string name="registration">Рэгістрацыя</string>
+    <string name="name">Імя</string>
+    <string name="your_name">Ваша імя</string>
+    <string name="singUp">Зарэгістравацца</string>
+    <string name="create_password">Прыдумайце пароль</string>
+    <string name="enter">Увайсці</string>
+    <string name="login">Уваход</string>
+    <string name="enter_password">Увядзіце пароль</string>
+    <string name="enter_email">Увядзіце Email</string>
+    <string name="email">Ваш Email</string>
+    <string name="loginTo">Увайсці</string>
+    <string name="main">Галоўная</string>
+    <string name="settings">Налады</string>
+    <string name="welcome">Вітаем у Смаленску!</string>
+    <string name="quests_">Квестаў</string>
+    <string name="ways_">Маршрутаў</string>
+    <string name="achievments_">Дасягненняў</string>
+    <string name="start_learning">Пачаць вывучэнне</string>
+    <string name="exit">Выйсці</string>
+    <string name="hello">Вітаю,</string>
+    <string name="your_achievments">Вашы дасягненні:</string>
+    <string name="achiev_ways">Маршруты</string>
+    <string name="complete">Пройдзена:</string>
+    <string name="wall">Крэпасная сцяна</string>
+    <string name="status">Статус:</string>
+    <string name="time">Час праходжання:</string>
+    <string name="angels">Смаленскія анёлы</string>
+    <string name="monuments">Помнікі</string>
+</resources>
