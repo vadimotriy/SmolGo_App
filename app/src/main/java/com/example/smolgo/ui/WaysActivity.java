@@ -22,7 +22,7 @@ public class WaysActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
 
-    TextView statusAngel;
+    TextView statusAngel, statusWall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +75,17 @@ public class WaysActivity extends AppCompatActivity {
                 statusAngel.setText("Пройдено");  break;
         }
 
+        statusWall = findViewById(R.id.status_wall);
+
+        switch (manager.getWallStatus()) {
+            case 0:
+                statusWall.setText("Не пройдено");  break;
+            case 1:
+                statusWall.setText("В процессе");  break;
+            case 2:
+                statusWall.setText("Пройдено");  break;
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0);
@@ -95,6 +106,15 @@ public class WaysActivity extends AppCompatActivity {
             case 2:
                 statusAngel.setText("Пройдено");  break;
         }
+
+        switch (manager.getWallStatus()) {
+            case 0:
+                statusWall.setText("Не пройдено");  break;
+            case 1:
+                statusWall.setText("В процессе");  break;
+            case 2:
+                statusWall.setText("Пройдено");  break;
+        }
     }
 
     public void angelWay(View view) {
@@ -104,8 +124,8 @@ public class WaysActivity extends AppCompatActivity {
     }
 
     public void wallWay(View view) {
-        Toast.makeText(this, "В разработке", LENGTH_SHORT).show();
-//        startActivity(new Intent(this, WallWayActivity.class));
-//        overridePendingTransition(0, 0);
+        manager.setWallStatus(1);
+        startActivity(new Intent(this, WallWayActivity.class));
+        overridePendingTransition(0, 0);
     }
 }

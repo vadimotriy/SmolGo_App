@@ -69,7 +69,7 @@ public class AchievmetsActivity extends AppCompatActivity {
         barQuests.setProgress(manager.getQuests());
 
         numWays = findViewById(R.id.ways_number);
-        numWays.setText(Integer.toString(Math.min(manager.getWays(), 1)));
+        numWays.setText(Integer.toString(Math.min(manager.getWays(), 2)));
 
         numQuests = findViewById(R.id.quests_number);
         numQuests.setText(Integer.toString(manager.getQuests()));

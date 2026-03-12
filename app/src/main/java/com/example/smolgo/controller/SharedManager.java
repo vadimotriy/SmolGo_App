@@ -95,4 +95,21 @@ public class SharedManager {
         prefs.edit().putInt("monument_status", num).apply();
     }
 
+
+    public int getWall() {
+        return prefs.getInt("wall", 0);
+    }
+
+    public void setWall(int num) {
+        prefs.edit().putInt("wall", num).apply();
+    }
+
+    public int getWallStatus() {
+        return prefs.getInt("wall_status", 0);
+    }
+
+    public void setWallStatus(int num) {
+        prefs.edit().putInt("wall_status", num).apply();
+    }
+
 }
