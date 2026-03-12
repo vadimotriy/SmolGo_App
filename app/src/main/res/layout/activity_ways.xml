@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:gravity="left"
-                    android:text="Смоленские ангелы"
+                    android:text="@string/angels"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="24dp"
                     android:textColor="?attr/colorOnSurface"

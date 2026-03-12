@@ -2,6 +2,8 @@ package com.example.smolgo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class QuestsActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
+    TextView statusMonument;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,16 @@ public class QuestsActivity extends AppCompatActivity {
             return false;
         });
 
+        statusMonument = findViewById(R.id.status_monument);
+        switch (manager.getMonumentStatus()) {
+            case 0:
+                statusMonument.setText("Не пройдено");  break;
+            case 1:
+                statusMonument.setText("В процессе");  break;
+            case 2:
+                statusMonument.setText("Пройдено");  break;
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0);
@@ -68,5 +81,20 @@ public class QuestsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         bottomNavigationView.setSelectedItemId(R.id.navigation_quests);
+
+        switch (manager.getMonumentStatus()) {
+            case 0:
+                statusMonument.setText("Не пройдено");  break;
+            case 1:
+                statusMonument.setText("В процессе");  break;
+            case 2:
+                statusMonument.setText("Пройдено");  break;
+        }
+    }
+
+    public void monument(View view) {
+        manager.setMonumentStatus(1);
+        startActivity(new Intent(this, MonumentQuestActivity.class));
+        overridePendingTransition(0, 0);
     }
 }

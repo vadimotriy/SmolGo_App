@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SmolGo"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.MonumentQuestActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.WallWayActivity"
             android:exported="false" />
         <activity

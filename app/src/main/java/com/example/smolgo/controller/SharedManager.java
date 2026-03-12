@@ -79,4 +79,20 @@ public class SharedManager {
         prefs.edit().putInt("angel_status", num).apply();
     }
 
+    public int getMonument() {
+        return prefs.getInt("monument", 0);
+    }
+
+    public void setMonument(int num) {
+        prefs.edit().putInt("monument", num).apply();
+    }
+
+    public int getMonumentStatus() {
+        return prefs.getInt("monument_status", 0);
+    }
+
+    public void setMonumentStatus(int num) {
+        prefs.edit().putInt("monument_status", num).apply();
+    }
+
 }

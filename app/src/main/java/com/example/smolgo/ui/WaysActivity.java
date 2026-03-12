@@ -104,7 +104,7 @@ public class WaysActivity extends AppCompatActivity {
     }
 
     public void wallWay(View view) {
-        Toast.makeText(this, "В разработке", LENGTH_SHORT);
+        Toast.makeText(this, "В разработке", LENGTH_SHORT).show();
 //        startActivity(new Intent(this, WallWayActivity.class));
 //        overridePendingTransition(0, 0);
     }

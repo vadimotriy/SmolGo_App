@@ -30,4 +30,6 @@
     <string name="wall">Крепостная стена</string>
     <string name="status">Статус:</string>
     <string name="time">Время прохождения:</string>
+    <string name="angels">Смоленские ангелы</string>
+    <string name="monuments">Памятники</string>
 </resources>
