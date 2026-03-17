@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    // Вход по нажатию на кнопку
     public void login(View view) {
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(mainScreen);
     }
 
+    // Переход на страницу регистрации
     public void signUp(View view) {
         finish();
     }

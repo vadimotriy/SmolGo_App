@@ -133,7 +133,7 @@ public class AngelWayActivity extends AppCompatActivity {
     public void nextClick(View view) {
         ++num;
 
-        if (num == 39) { manager.setAngel(0); manager.setAngelStatus(2); manager.addWays(); finish(); }
+        if (num == 39) { manager.setAngel(0); manager.setAngelStatus(2); finish(); }
         else {
             label.setText(labelsText[num]);
             about.setText(aboutText[num]);

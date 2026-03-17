@@ -32,11 +32,13 @@ public class WaysActivity extends AppCompatActivity {
 
         manager = SharedManager.getInstance(this);
 
+        // Если человек не зарегестрирован, мы переводим его на onboarding1
         if (!manager.getIsLogin()) {
             Intent activity = new Intent(this, OnBoarding1Activity.class);
             startActivity(activity);
         }
 
+        // Настройка BottomNavigationView
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.navigation_ways);
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -64,8 +66,8 @@ public class WaysActivity extends AppCompatActivity {
             return false;
         });
 
+        // Установка статусов маршрутов
         statusAngel = findViewById(R.id.status_angel);
-
         switch (manager.getAngelStatus()) {
             case 0:
                 statusAngel.setText("Не пройдено");  break;
@@ -76,7 +78,6 @@ public class WaysActivity extends AppCompatActivity {
         }
 
         statusWall = findViewById(R.id.status_wall);
-
         switch (manager.getWallStatus()) {
             case 0:
                 statusWall.setText("Не пройдено");  break;
@@ -117,12 +118,14 @@ public class WaysActivity extends AppCompatActivity {
         }
     }
 
+    // Переход на один из маршрутов по нажатию по нему
     public void angelWay(View view) {
         manager.setAngelStatus(1);
         startActivity(new Intent(this, AngelWayActivity.class));
         overridePendingTransition(0, 0);
     }
 
+    // Переход на один из маршрутов по нажатию по нему
     public void wallWay(View view) {
         manager.setWallStatus(1);
         startActivity(new Intent(this, WallWayActivity.class));

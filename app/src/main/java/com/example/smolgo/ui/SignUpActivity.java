@@ -50,6 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
+    // Регистрация по нажатию на кнопку
     public void signUp(View view) {
         String name = nameInput.getText().toString();
         String email = emailInput.getText().toString();
@@ -66,6 +67,7 @@ public class SignUpActivity extends AppCompatActivity {
         startActivity(mainScreen);
     }
 
+    // Переход на страницу входа
     public void login(View view) {
         Intent login = new Intent(this, LoginActivity.class);
         startActivity(login);

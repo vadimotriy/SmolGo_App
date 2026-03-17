@@ -91,7 +91,7 @@ public class WallWayActivity extends AppCompatActivity {
     public void nextClick(View view) {
         ++num;
 
-        if (num == 18) { manager.setWall(0); manager.setWallStatus(2); manager.addWays(); finish(); }
+        if (num == 18) { manager.setWall(0); manager.setWallStatus(2); finish(); }
         else {
             label.setText(labelsText[num]);
             about.setText(aboutText[num]);

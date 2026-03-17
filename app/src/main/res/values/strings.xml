@@ -1,4 +1,5 @@
 <resources>
+    <!--  Русский язык  -->
     <string name="app_name">SmolGo</string>
     <string name="next">Далее</string>
     <string name="quests">Квесты</string>

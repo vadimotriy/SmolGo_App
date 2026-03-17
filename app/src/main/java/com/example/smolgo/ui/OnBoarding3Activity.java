@@ -26,6 +26,7 @@ public class OnBoarding3Activity extends AppCompatActivity {
         });
     }
 
+    // Переход на регистрацию
     public void nextActivity(View view) {
         Intent signUp = new Intent(this, SignUpActivity.class);
         startActivity(signUp);

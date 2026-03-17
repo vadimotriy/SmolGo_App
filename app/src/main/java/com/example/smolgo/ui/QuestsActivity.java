@@ -28,11 +28,13 @@ public class QuestsActivity extends AppCompatActivity {
 
         manager = SharedManager.getInstance(this);
 
+        // Если человек не зарегестрирован, мы переводим его на onboarding1
         if (!manager.getIsLogin()) {
             Intent activity = new Intent(this, OnBoarding1Activity.class);
             startActivity(activity);
         }
 
+        // Настройка BottomNavigationView
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.navigation_quests);
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -60,6 +62,7 @@ public class QuestsActivity extends AppCompatActivity {
             return false;
         });
 
+        // Установка статусов квестов
         statusMonument = findViewById(R.id.status_monument);
         switch (manager.getMonumentStatus()) {
             case 0:
@@ -92,6 +95,7 @@ public class QuestsActivity extends AppCompatActivity {
         }
     }
 
+    // Переход на один из квестов по нажатию по нему
     public void monument(View view) {
         manager.setMonumentStatus(1);
         startActivity(new Intent(this, MonumentQuestActivity.class));

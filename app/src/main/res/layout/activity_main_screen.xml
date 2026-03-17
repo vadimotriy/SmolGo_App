@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
 
-            app:srcCompat="@drawable/smolensk_view" />
+            app:srcCompat="@drawable/img_smolensk_view" />
 
         <TextView
             android:layout_width="match_parent"
@@ -62,7 +62,7 @@
         <LinearLayout
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:background="@drawable/card"
+            android:background="@drawable/shape_card"
             android:orientation="vertical">
 
             <TextView
@@ -100,7 +100,7 @@
             android:layout_height="120dp"
             android:layout_marginStart="10dp"
             android:orientation="vertical"
-            android:background="@drawable/card" >
+            android:background="@drawable/shape_card" >
 
             <TextView
                 android:layout_marginTop="10dp"
@@ -137,7 +137,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:orientation="vertical"
-            android:background="@drawable/card"
+            android:background="@drawable/shape_card"
             android:layout_marginStart="10dp" >
 
             <TextView

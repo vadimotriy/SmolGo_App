@@ -32,11 +32,13 @@ public class MainScreenActivity extends AppCompatActivity {
 
         manager = SharedManager.getInstance(this);
 
+        // Если человек не зарегестрирован, мы переводим его на onboarding1
         if (!manager.getIsLogin()) {
             Intent activity = new Intent(this, OnBoarding1Activity.class);
             startActivity(activity);
         }
 
+        // Настройка BottomNavigationView
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
@@ -63,12 +65,16 @@ public class MainScreenActivity extends AppCompatActivity {
             return false;
         });
 
+        // Заполнение краткой информации
         ways = findViewById(R.id.ways_number);
         quests = findViewById(R.id.quests_number);
         achievments = findViewById(R.id.achievments_number);
 
-        ways.setText(Integer.toString(Math.min(manager.getWays(), 1)));
-        quests.setText(Integer.toString(manager.getQuests()));
+        int waysNum = (manager.getAngelStatus() == 2 ? 1 : 0) + (manager.getWallStatus() == 2 ? 1 : 0);
+        int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0);
+
+        ways.setText(Integer.toString(waysNum));
+        quests.setText(Integer.toString(questsNum));
         achievments.setText(Integer.toString(manager.getAchievments()));
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -84,6 +90,7 @@ public class MainScreenActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
     }
 
+    // Переход во вкладку "Маршруты" по нажатию на кнопку
     public void activityWays(View view) {
         startActivity(new Intent(this, WaysActivity.class));
         overridePendingTransition(0, 0);

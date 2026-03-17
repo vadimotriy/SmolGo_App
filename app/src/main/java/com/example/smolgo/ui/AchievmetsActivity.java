@@ -30,11 +30,13 @@ public class AchievmetsActivity extends AppCompatActivity {
 
         manager = SharedManager.getInstance(this);
 
+        // Если человек не зарегестрирован, мы переводим его на onboarding1
         if (!manager.getIsLogin()) {
             Intent activity = new Intent(this, OnBoarding1Activity.class);
             startActivity(activity);
         }
 
+        // Настройка BottomNavigationView
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.navigation_achievmnets);
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -62,17 +64,22 @@ public class AchievmetsActivity extends AppCompatActivity {
             return false;
         });
 
+        int waysNum = (manager.getAngelStatus() == 2 ? 1 : 0) + (manager.getWallStatus() == 2 ? 1 : 0);
+        int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0);
+
+        // Заполнение PorgresBar
         barWays = findViewById(R.id.progressBarWays);
-        barWays.setProgress(manager.getWays());
+        barWays.setProgress(waysNum);
 
         barQuests = findViewById(R.id.progressBarQuests);
-        barQuests.setProgress(manager.getQuests());
+        barQuests.setProgress(questsNum);
 
+        // Заполнение количества пройденных маршрутов/квестов
         numWays = findViewById(R.id.ways_number);
-        numWays.setText(Integer.toString(Math.min(manager.getWays(), 2)));
+        numWays.setText(Integer.toString(waysNum));
 
         numQuests = findViewById(R.id.quests_number);
-        numQuests.setText(Integer.toString(Math.min(manager.getQuests(), 1)));
+        numQuests.setText(Integer.toString(questsNum));
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

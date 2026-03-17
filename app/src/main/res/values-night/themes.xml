@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!--  ночная тема  -->
     <style name="Base.Theme.SmolGo" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/background_dark</item>
         <item name="colorOnSurface">@color/white</item>
@@ -8,8 +8,5 @@
         <item name="colorOnBackground">@color/bottom_dark</item>
         <item name="colorSecondary">@color/inputs_dark</item>
         <item name="colorOnError">@color/secondary_text_dark</item>
-
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>
