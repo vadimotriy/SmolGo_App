@@ -8,186 +8,205 @@
     tools:context=".ui.MainScreenActivity"
     android:fitsSystemWindows="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-
-            app:srcCompat="@drawable/img_smolensk_view" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:fontFamily="@font/roboto_medium"
-            android:text="@string/welcome"
-            android:textColor="@color/white"
-            android:textSize="32sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.95" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.40">
-
-
-        <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:background="@drawable/shape_card"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:drawableTop="@drawable/ic_ways_small"
-                android:fontFamily="@font/roboto_medium"
-                android:gravity="center"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="1dp" />
-
-            <TextView
-                android:id="@+id/ways_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="32sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:gravity="center"
-                android:text="@string/ways_"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="10dp"
             android:orientation="vertical"
-            android:background="@drawable/shape_card" >
+            android:layout_gravity="center_horizontal">
 
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+
+                    app:srcCompat="@drawable/img_smolensk_view" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/welcome"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.95" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:drawableTop="@drawable/ic_quests_small"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="1dp"
-                android:gravity="center"/>
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp">
+
+                <LinearLayout
+                    android:id="@+id/card1"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/shape_card"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintWidth_percent="0.32"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/card2"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawableTop="@drawable/ic_ways_small"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="1dp" />
+
+                    <TextView
+                        android:id="@+id/ways_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:text="@string/ways_"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card2"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/shape_card"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintWidth_percent="0.32"
+                    app:layout_constraintStart_toEndOf="@id/card1"
+                    app:layout_constraintEnd_toStartOf="@id/card3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTop="@drawable/ic_quests_small"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="1dp" />
+
+                    <TextView
+                        android:id="@+id/quests_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:text="@string/quests_"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card3"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/shape_card"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintWidth_percent="0.32"
+                    app:layout_constraintStart_toEndOf="@id/card2"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawableTop="@drawable/ic_achievments_small"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="1dp" />
+
+                    <TextView
+                        android:id="@+id/achievments_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:text="@string/achievments_"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/quests_number"
-                android:layout_width="match_parent"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="0"
+                android:text="@string/last_news"
                 android:textColor="?attr/colorOnSurface"
-                android:textSize="32sp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="@string/quests_"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp"
-                android:gravity="center"/>
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_medium" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:orientation="vertical"
-            android:background="@drawable/shape_card"
-            android:layout_marginStart="10dp" >
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:drawableTop="@drawable/ic_achievments_small"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="1dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:id="@+id/achievments_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="0"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="32sp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="@string/achievments_"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp"
-                android:gravity="center"/>
-        </LinearLayout>
-    </LinearLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
-        android:layout_width="380dp"
-        android:layout_height="80dp"
-        android:backgroundTint="@color/title"
-        android:fontFamily="@font/roboto_medium"
-        android:onClick="activityWays"
-
-        android:text="@string/start_learning"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:cornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58" />
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

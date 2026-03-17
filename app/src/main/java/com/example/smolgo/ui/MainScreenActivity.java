@@ -89,10 +89,4 @@ public class MainScreenActivity extends AppCompatActivity {
         super.onResume();
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
     }
-
-    // Переход во вкладку "Маршруты" по нажатию на кнопку
-    public void activityWays(View view) {
-        startActivity(new Intent(this, WaysActivity.class));
-        overridePendingTransition(0, 0);
-    }
 }
