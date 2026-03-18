@@ -4,6 +4,7 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -16,6 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.smolgo.R;
 import com.example.smolgo.controller.Api;
 import com.example.smolgo.controller.SharedManager;
+import com.example.smolgo.models.RegisterRequest;
+import com.example.smolgo.models.RegisterResponce;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONObject;
@@ -57,37 +60,30 @@ public class SignUpActivity extends AppCompatActivity {
         String name = nameInput.getText().toString();
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
+        RegisterRequest request = new RegisterRequest(name, email, password);
+
         Intent mainScreen = new Intent(this, MainScreenActivity.class);
 
         Retrofit builder = new Retrofit.Builder().baseUrl("https://web-production-2e91f.up.railway.app/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
-        builder.create(Api.class).signUp(Map.of("name", name, "email", email, "password", password))
-                .enqueue(new Callback<ResponseBody>() {
-                    @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        try {
-                            JSONObject json = new JSONObject(response.body().string());
-                            String result = json.getString("message");
+        builder.create(Api.class).signUp(request).enqueue(new Callback<RegisterResponce>() {
+            @Override
+            public void onResponse(Call<RegisterResponce> call, Response<RegisterResponce> response) {
+                if (response.body().message.equals("Succes")) {
+                    manager.setIsLogin(true); manager.setName(name);
+                    startActivity(mainScreen);
+                } else {
+                    Toast.makeText(SignUpActivity.this, "Email уже используется", LENGTH_SHORT).show();
+                }
+            }
 
-                            if (result.equals("Succes")) {
-                                manager.setIsLogin(true);
-                                manager.setName(name);
-                                startActivity(mainScreen);
-                            } else {
-                                Toast.makeText(SignUpActivity.this, "EMAIL уже используется!", LENGTH_SHORT).show();
-                            }
-                        } catch (Exception e) {
-                            Toast.makeText(SignUpActivity.this, "ERROR_PARSING", LENGTH_SHORT).show();
-                        }
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-                        Toast.makeText(SignUpActivity.this, "ERROR", LENGTH_SHORT).show();
-                    }
-                });
+            @Override
+            public void onFailure(Call<RegisterResponce> call, Throwable t) {
+                Log.e("SmolGo_SignUp", t.toString());
+                Toast.makeText(SignUpActivity.this, "Error: " + t.toString(), LENGTH_SHORT).show();
+            }
+        });
     }
 
     // Переход на страницу входа

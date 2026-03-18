@@ -1,7 +1,10 @@
 package com.example.smolgo.ui;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,8 +15,19 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.smolgo.R;
+import com.example.smolgo.controller.Api;
 import com.example.smolgo.controller.SharedManager;
+import com.example.smolgo.models.LoginRequest;
+import com.example.smolgo.models.LoginResponce;
+import com.example.smolgo.models.RegisterRequest;
+import com.example.smolgo.models.RegisterResponce;
 import com.google.android.material.textfield.TextInputEditText;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
     TextInputEditText emailInput, passwordInput;
@@ -41,15 +55,33 @@ public class LoginActivity extends AppCompatActivity {
     public void login(View view) {
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
+        LoginRequest request = new LoginRequest(email, password);
 
-        if (email != "vblinov2009@mail.ru" || email != "vblinov2009.rus@yandex.ru") {
-            Toast.makeText(this, "Email не зарегестрирован", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        manager.setIsLogin(true);
         Intent mainScreen = new Intent(this, MainScreenActivity.class);
-        startActivity(mainScreen);
+
+        Retrofit builder = new Retrofit.Builder().baseUrl("https://web-production-2e91f.up.railway.app/")
+                .addConverterFactory(GsonConverterFactory.create()).build();
+
+        builder.create(Api.class).login(request).enqueue(new Callback<LoginResponce>() {
+            @Override
+            public void onResponse(Call<LoginResponce> call, Response<LoginResponce> response) {
+                if (response.body().message.equals("Succes")) {
+                    String name = response.body().name;
+                    manager.setIsLogin(true); manager.setName(name);
+                    startActivity(mainScreen);
+                } else if (response.body().message.equals("Email has not been used")) {
+                    Toast.makeText(LoginActivity.this, "Email не зарегестрирован", LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Неверный пароль", LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponce> call, Throwable t) {
+                Log.e("SmolGo_Login", t.toString());
+                Toast.makeText(LoginActivity.this, "Error: " + t.toString(), LENGTH_SHORT).show();
+            }
+        });
     }
 
     // Переход на страницу регистрации
