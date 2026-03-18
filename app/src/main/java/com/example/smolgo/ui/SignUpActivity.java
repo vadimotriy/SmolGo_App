@@ -1,5 +1,7 @@
 package com.example.smolgo.ui;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -55,16 +57,37 @@ public class SignUpActivity extends AppCompatActivity {
         String name = nameInput.getText().toString();
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
-
-        if (email == "vblinov2009@mail.ru") {
-            Toast.makeText(this, "Email уже занят", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        manager.setIsLogin(true);
-        manager.setName(name);
         Intent mainScreen = new Intent(this, MainScreenActivity.class);
-        startActivity(mainScreen);
+
+        Retrofit builder = new Retrofit.Builder().baseUrl("https://web-production-2e91f.up.railway.app/")
+                .addConverterFactory(GsonConverterFactory.create()).build();
+
+        builder.create(Api.class).signUp(Map.of("name", name, "email", email, "password", password))
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        try {
+                            JSONObject json = new JSONObject(response.body().string());
+                            String result = json.getString("message");
+
+                            if (result.equals("Succes")) {
+                                manager.setIsLogin(true);
+                                manager.setName(name);
+                                startActivity(mainScreen);
+                            } else {
+                                Toast.makeText(SignUpActivity.this, "EMAIL уже используется!", LENGTH_SHORT).show();
+                            }
+                        } catch (Exception e) {
+                            Toast.makeText(SignUpActivity.this, "ERROR_PARSING", LENGTH_SHORT).show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(SignUpActivity.this, "ERROR", LENGTH_SHORT).show();
+                    }
+                });
     }
 
     // Переход на страницу входа
