@@ -2,6 +2,7 @@ package com.example.smolgo.ui;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,6 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.smolgo.FinalActivity;
 import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.textfield.TextInputEditText;
@@ -126,7 +128,7 @@ public class MonumentQuestActivity extends AppCompatActivity {
             return;
         }
 
-        if (num == 5) { manager.setMonument(0); manager.setMonumentStatus(2); finish(); }
+        if (num == 5) { manager.setMonument(0); manager.setMonumentStatus(2); startActivity(new Intent(this, FinalActivity.class)); }
         else {
             label.setText(labelsText[num]);
             where.setText(whereText[num]);

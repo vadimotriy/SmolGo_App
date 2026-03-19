@@ -1,5 +1,6 @@
 package com.example.smolgo.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,6 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.smolgo.FinalActivity;
 import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 
@@ -135,7 +137,7 @@ public class WallWayActivity extends AppCompatActivity {
     public void nextClick(View view) {
         ++num;
 
-        if (num == 17) { manager.setWall(0); manager.setWallStatus(2); finish(); }
+        if (num == 17) { manager.setWall(0); manager.setWallStatus(2); startActivity(new Intent(this, FinalActivity.class)); }
         else {
             label.setText(labelsText[num]);
             where.setText(whereText[num]);

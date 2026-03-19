@@ -1,5 +1,6 @@
 package com.example.smolgo.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.smolgo.FinalActivity;
 import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 
@@ -133,7 +135,7 @@ public class AngelWayActivity extends AppCompatActivity {
     public void nextClick(View view) {
         ++num;
 
-        if (num == 39) { manager.setAngel(0); manager.setAngelStatus(2); finish(); }
+        if (num == 39) { manager.setAngel(0); manager.setAngelStatus(2); startActivity(new Intent(this, FinalActivity.class)); }
         else {
             label.setText(labelsText[num]);
             about.setText(aboutText[num]);
