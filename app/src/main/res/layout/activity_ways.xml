@@ -65,7 +65,7 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginStart="24dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="24sp"/>
+                        android:textSize="20sp"/>
 
                     <TextView
                         android:id="@+id/status_wall"
@@ -77,11 +77,12 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="24dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:layout_weight="1"/>
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -94,7 +95,7 @@
                         android:text="@string/time"
                         android:layout_marginStart="24dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="24sp"/>
+                        android:textSize="20sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -104,7 +105,7 @@
                         android:text="3 ч."
                         android:layout_marginEnd="24dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:layout_weight="1"/>
                 </LinearLayout>
             </LinearLayout>
@@ -152,7 +153,7 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginStart="24dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="24sp"/>
+                        android:textSize="20sp"/>
 
                     <TextView
                         android:id="@+id/status_angel"
@@ -164,11 +165,12 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="24dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:layout_weight="1"/>
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -181,7 +183,7 @@
                         android:text="@string/time"
                         android:layout_marginStart="24dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="24sp"/>
+                        android:textSize="20sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -191,7 +193,7 @@
                         android:text="5 ч."
                         android:layout_marginEnd="24dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:layout_weight="1"/>
                 </LinearLayout>
             </LinearLayout>

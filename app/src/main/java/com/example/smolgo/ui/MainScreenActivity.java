@@ -1,12 +1,16 @@
 package com.example.smolgo.ui;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -88,5 +92,16 @@ public class MainScreenActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+    }
+
+    public void loadNews(View view) {
+        Toast.makeText(MainScreenActivity.this, "Новых новостей нет.", LENGTH_SHORT).show();
+    }
+
+    public void firstNews(View view) {
+        String url = "https://vk.ru/wall-235677777_1";
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
     }
 }
