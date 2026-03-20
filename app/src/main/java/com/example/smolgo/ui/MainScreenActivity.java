@@ -83,7 +83,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, 0, systemBars.right, 0);
+            v.setPadding(0, 0, 0, 0);
             return insets;
         });
     }

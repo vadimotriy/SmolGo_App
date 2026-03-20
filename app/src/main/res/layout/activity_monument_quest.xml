@@ -138,7 +138,6 @@
                     android:id="@+id/year"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Год"
                     android:inputType="text"
                     android:padding="16dp"
                     android:textSize="20sp" />

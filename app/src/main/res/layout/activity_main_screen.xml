@@ -77,7 +77,8 @@
                     app:layout_constraintEnd_toStartOf="@id/card2"
                     app:layout_constraintHorizontal_chainStyle="spread_inside"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintWidth_percent="0.32">
+                    app:layout_constraintWidth_percent="0.32"
+                    tools:ignore="MissingConstraints">
 
                     <TextView
                         android:layout_width="match_parent"
