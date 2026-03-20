@@ -52,15 +52,15 @@ public class MonumentQuestActivity extends AppCompatActivity {
             "Кто сидит рядом с Твардовским (только фамилия)?",
             "Что написано на памятнике?",
             "Какие года самые ранние на памятнике?",
-            "Какие годы жизни у Егорова?"
+            "Сколько наград на груди у Егорова?"
     };
 
     String[] yearsText = {
-            "1906",
+            "1855",
             "Теркин",
             "В. И. Ленин",
             "1609 - 1611",
-            "1923 - 1975"
+            "14"
     };
 
     String[] yearsText2 = {
@@ -68,7 +68,7 @@ public class MonumentQuestActivity extends AppCompatActivity {
             "теркин",
             "В. И. ЛЕНИН",
             "1609-1611",
-            "1923-1975"
+            "14"
     };
 
     int[] monumentsImages = {
