@@ -146,4 +146,14 @@ public class WallWayActivity extends AppCompatActivity {
             manager.setWall(num);
         }
     }
+
+    public void showMap(View view) {
+//
+        Intent intent = new Intent(this, MapActivity.class);
+        intent.putExtra("cord_first", 54.780008);
+        intent.putExtra("cord_second", 32.043706);
+        intent.putExtra("title", "Крепостная стена");
+        intent.putExtra("object", labelsText[num]);
+        startActivity(intent);
+    }
 }

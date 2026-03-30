@@ -120,7 +120,8 @@
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@id/card3"
                     app:layout_constraintStart_toEndOf="@id/card1"
-                    app:layout_constraintWidth_percent="0.32">
+                    app:layout_constraintWidth_percent="0.32"
+                    tools:ignore="MissingConstraints">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -162,7 +163,8 @@
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/card2"
-                    app:layout_constraintWidth_percent="0.32">
+                    app:layout_constraintWidth_percent="0.32"
+                    tools:ignore="MissingConstraints">
 
                     <TextView
                         android:layout_width="match_parent"

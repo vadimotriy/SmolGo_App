@@ -56,7 +56,7 @@ public class MonumentQuestActivity extends AppCompatActivity {
     };
 
     String[] yearsText = {
-            "1855",
+            "1885",
             "Теркин",
             "В. И. Ленин",
             "1609 - 1611",
@@ -64,7 +64,7 @@ public class MonumentQuestActivity extends AppCompatActivity {
     };
 
     String[] yearsText2 = {
-            "1906",
+            "1885",
             "теркин",
             "В. И. ЛЕНИН",
             "1609-1611",

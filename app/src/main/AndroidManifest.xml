@@ -16,6 +16,9 @@
         android:theme="@style/Theme.SmolGo"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.MapActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.Monument2QuestActivity"
             android:exported="false" />
         <activity
