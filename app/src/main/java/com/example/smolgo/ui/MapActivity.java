@@ -30,9 +30,6 @@ public class MapActivity extends AppCompatActivity {
     private double cordX, cordY;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        MapKitFactory.setApiKey("26271c3e-c6ed-4240-be69-26387ce0c7e5");
-        MapKitFactory.initialize(this);
-
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_map);
