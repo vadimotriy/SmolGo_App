@@ -28,7 +28,6 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.483"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.45"
@@ -101,7 +100,94 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:gravity="right"
-                        android:text="2 ч."
+                        android:text="30 мин."
+                        android:layout_marginEnd="24dp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="20sp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.45"
+                android:background="@drawable/shape_card"
+
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="monument2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="left"
+                    android:text="@string/monuments_2"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="24dp"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="32sp"
+                    android:drawablePadding="15dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="left"
+                        android:text="@string/status"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="24dp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/status_monument_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="right"
+                        android:text=""
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="24dp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="20sp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="left"
+                        android:text="@string/time"
+                        android:layout_marginStart="24dp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="right"
+                        android:text="40 мин."
                         android:layout_marginEnd="24dp"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="20sp"

@@ -18,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class QuestsActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
-    TextView statusMonument;
+    TextView statusMonument, statusMonument2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +72,17 @@ public class QuestsActivity extends AppCompatActivity {
             case 2:
                 statusMonument.setText("Пройдено");  break;
         }
+        // Установка статусов квестов
+        statusMonument2 = findViewById(R.id.status_monument_2);
+        switch (manager.getMonumentStatus2()) {
+            case 0:
+                statusMonument2.setText("Не пройдено");  break;
+            case 1:
+                statusMonument2.setText("В процессе");  break;
+            case 2:
+                statusMonument2.setText("Пройдено");  break;
+        }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -93,12 +104,27 @@ public class QuestsActivity extends AppCompatActivity {
             case 2:
                 statusMonument.setText("Пройдено");  break;
         }
+
+        switch (manager.getMonumentStatus2()) {
+            case 0:
+                statusMonument2.setText("Не пройдено");  break;
+            case 1:
+                statusMonument2.setText("В процессе");  break;
+            case 2:
+                statusMonument2.setText("Пройдено");  break;
+        }
     }
 
     // Переход на один из квестов по нажатию по нему
     public void monument(View view) {
         manager.setMonumentStatus(1);
         startActivity(new Intent(this, MonumentQuestActivity.class));
+        overridePendingTransition(0, 0);
+    }
+
+    public void monument2(View view) {
+        manager.setMonumentStatus2(1);
+        startActivity(new Intent(this, Monument2QuestActivity.class));
         overridePendingTransition(0, 0);
     }
 }

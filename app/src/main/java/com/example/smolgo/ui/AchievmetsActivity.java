@@ -65,7 +65,7 @@ public class AchievmetsActivity extends AppCompatActivity {
         });
 
         int waysNum = (manager.getAngelStatus() == 2 ? 1 : 0) + (manager.getWallStatus() == 2 ? 1 : 0);
-        int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0);
+        int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0) + (manager.getMonumentStatus2() == 2 ? 1 : 0);
 
         // Заполнение PorgresBar
         barWays = findViewById(R.id.progressBarWays);

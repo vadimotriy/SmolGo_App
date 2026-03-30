@@ -38,12 +38,18 @@ public class SharedManager {
     public void setName(String name) { prefs.edit().putString("name", name).apply(); }
 
 
-    // 4 метода для хранения данных про маршрута "ангелочки Смоленска"
+    // 4 метода для хранения данных про маршрут "ангелочки Смоленска"
     public int getAngel() { return prefs.getInt("angel", 0); }
     public void setAngel(int num) { prefs.edit().putInt("angel", num).apply(); }
     public int getAngelStatus() { return prefs.getInt("angel_status", 0); }
     public void setAngelStatus(int num) { prefs.edit().putInt("angel_status", num).apply(); }
 
+
+    // 4 метода для хранения данных про квест "Памятники 2"
+    public int getMonument2() { return prefs.getInt("monument2", 0); }
+    public void setMonument2(int num) { prefs.edit().putInt("monument2", num).apply(); }
+    public int getMonumentStatus2() { return prefs.getInt("monument_status2", 0); }
+    public void setMonumentStatus2(int num) { prefs.edit().putInt("monument_status2", num).apply(); }
 
     // 4 метода для хранения данных про квест "Памятники Смоленска"
     public int getMonument() { return prefs.getInt("monument", 0); }
