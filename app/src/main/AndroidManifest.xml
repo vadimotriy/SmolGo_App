@@ -23,7 +23,7 @@
             android:name=".ui.Monument2QuestActivity"
             android:exported="false" />
         <activity
-            android:name=".FinalActivity"
+            android:name=".ui.FinalActivity"
             android:exported="false" />
         <activity
             android:name=".ui.MonumentQuestActivity"

@@ -1,4 +1,4 @@
-package com.example.smolgo;
+package com.example.smolgo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.smolgo.ui.MainScreenActivity;
-import com.example.smolgo.ui.SettingsActivity;
+import com.example.smolgo.R;
 
 public class FinalActivity extends AppCompatActivity {
 

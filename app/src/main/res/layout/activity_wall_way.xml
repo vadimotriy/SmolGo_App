@@ -116,6 +116,10 @@
                 android:textSize="24sp"
                 app:cornerRadius="16dp" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
         </LinearLayout>
     </ScrollView>
 

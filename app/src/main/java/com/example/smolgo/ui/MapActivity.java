@@ -40,7 +40,6 @@ public class MapActivity extends AppCompatActivity {
         titleText = intent.getStringExtra("title");
         objectName = intent.getStringExtra("object");
 
-
         mapView = findViewById(R.id.mapview);
         title = findViewById(R.id.titleView);
         title.setText(titleText);
@@ -61,20 +60,15 @@ public class MapActivity extends AppCompatActivity {
         PlacemarkMapObject placemark = mapView.getMap().getMapObjects().addPlacemark();
         placemark.setGeometry(new Point(cordX, cordY));
 
-        TextStyle textStyle = new TextStyle().setSize(15f)
-                .setPlacement(TextStyle.Placement.TOP).setOffset(5f);
-
+        TextStyle textStyle = new TextStyle().setSize(15f).setPlacement(TextStyle.Placement.TOP).setOffset(5f);
         placemark.setText(objectName, textStyle);
 
-
         IconStyle iconStyle = new IconStyle().setScale(0.5f);
-
         placemark.setIcon(ImageProvider.fromResource(this, R.drawable.map_pin), iconStyle);
-        placemark.setText(objectName);
 
         mapView.getMap().move(
-                new CameraPosition(new Point(cordX, cordY), 18.0f, 0.0f, 0.0f), // 15.0f — уровень зума
-                new Animation(Animation.Type.SMOOTH, 2),      // Анимация на 2 секунды
+                new CameraPosition(new Point(cordX, cordY), 18.0f, 0.0f, 0.0f),
+                new Animation(Animation.Type.SMOOTH, 2),
                 null
         );
     }

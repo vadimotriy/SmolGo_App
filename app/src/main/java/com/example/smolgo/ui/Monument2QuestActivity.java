@@ -15,7 +15,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.smolgo.FinalActivity;
 import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.textfield.TextInputEditText;
