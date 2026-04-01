@@ -1,0 +1,118 @@
+package com.example.smolgo.ui;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import com.example.smolgo.R;
+import com.example.smolgo.controller.SharedManager;
+
+// Активность с маршрутом "Гастрономический маршрут"
+public class FoodWayActivity extends AppCompatActivity {
+    // Массив с названиями заведений
+    String[] labelsText = {
+            "РУССКИЙ ДВОР",
+            "Кофебук",
+            "Лопатинский Сад"
+    };
+
+    // Массив с местоположением заведений
+    String[] whereText = {
+            "улица Октябрьской Революции, 1Б",
+            "улица Октябрьской Революции, 6",
+            "улица Дзержинского, 18Б"
+    };
+
+    // Массив с описанием заведений
+    String[] aboutText = {
+            "Кафе «Русский двор» в Смоленске — уголок традиционного гостеприимства, где бережно сохраняют и развивают смоленскую кухню. Здесь подают по-настоящему домашние блюда: румяные блины, сытные пельмени и наваристые супы. Уютный интерьер в старорусском стиле создает особую атмосферу, идеальную для семейных обедов и встреч с друзьями. Доступные цены и качественный сервис делают это место одним из самых популярных в городе.",
+            "Кофейня «Кофебук» — это уютное заведение в историческом центре Смоленска, где можно насладиться ароматным кофе и вкусными десертами. Интерьер кофейни выполнен в спокойных тонах с приглушенным светом и ненавязчивой музыкой, что создает приятную атмосферу для отдыха.",
+            "Кафе «Лопатинский Сад» — это идеальное место в самом сердце Смоленска, где вы сможете провести время в теплой, уютной атмосфере. Заведение предлагает гостям насладиться изысканными блюдами, качественным обслуживанием и приятной живой музыкой, создающей незабываемое настроение для отдыха с друзьями, семьей или романтического вечера."
+    };
+
+    // Массив с кординатами заведений
+    double[][] cords = {
+            {54.781363, 32.045116},
+            {54.781326, 32.043649},
+            {54.781455, 32.037711}
+    };
+
+    // Массив с изображениями заведений
+    int[] towerImages = {
+            R.drawable.img_food_1,
+            R.drawable.img_food_2,
+            R.drawable.img_food_3
+    };
+
+    int num;
+    SharedManager manager;
+    TextView label, about, where;
+    ImageView image;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_food_way);
+
+        manager = SharedManager.getInstance(this);
+        num = manager.getFood();
+
+        label = findViewById(R.id.info);
+        where = findViewById(R.id.where);
+        about = findViewById(R.id.about);
+        image = findViewById(R.id.imageFood);
+
+        label.setText(labelsText[num]);
+        where.setText(whereText[num]);
+        about.setText(aboutText[num]);
+        image.setImageResource(towerImages[num]);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+
+    // Выход из активности
+    public void backActivity(View view) {
+        finish();
+    }
+
+    // Переход на следующую заведение
+    public void nextClick(View view) {
+        ++num;
+
+        // Если все заведения пройдены, то переход на активнсоть финиша
+        if (num == 3) {
+            manager.setFood(0); manager.setFoodStatus(2);
+            startActivity(new Intent(this, FinalActivity.class));
+        } else {
+            label.setText(labelsText[num]);
+            where.setText(whereText[num]);
+            about.setText(aboutText[num]);
+            image.setImageResource(towerImages[num]);
+            manager.setFood(num);
+        }
+    }
+
+    // Переход к расположению заведений на карте
+    public void showMap(View view) {
+        Intent intent = new Intent(this, MapActivity.class);
+        intent.putExtra("cord_first", cords[num][0]);
+        intent.putExtra("cord_second", cords[num][1]);
+        intent.putExtra("title", "Гастрономический");
+        intent.putExtra("object", labelsText[num]);
+        startActivity(intent);
+    }
+}

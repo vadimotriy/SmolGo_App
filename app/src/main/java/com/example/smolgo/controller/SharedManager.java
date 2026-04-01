@@ -39,6 +39,7 @@ public class SharedManager {
     public int getMonumentStatus2() { return prefs.getInt("monument_status2", 0); }
     public void setMonumentStatus2(int num) { prefs.edit().putInt("monument_status2", num).apply(); }
 
+
     // 4 метода для хранения данных про квест "Памятники Смоленска"
     public int getMonument() { return prefs.getInt("monument", 0); }
     public void setMonument(int num) { prefs.edit().putInt("monument", num).apply(); }
@@ -52,10 +53,18 @@ public class SharedManager {
     public int getWallStatus() { return prefs.getInt("wall_status", 0); }
     public void setWallStatus(int num) { prefs.edit().putInt("wall_status", num).apply(); }
 
+
     // 4 метода для хранения данных про маршрут "Храмы Смоленска"
     public int getChurch() { return prefs.getInt("church", 0); }
     public void setChurch(int num) { prefs.edit().putInt("church", num).apply(); }
     public int getChurchStatus() { return prefs.getInt("church_status", 0); }
     public void setChurchStatus(int num) { prefs.edit().putInt("church_status", num).apply(); }
+
+
+    // 4 метода для хранения данных про маршрут "Гастрономический маршрут"
+    public int getFood() { return prefs.getInt("food", 0); }
+    public void setFood(int num) { prefs.edit().putInt("food", num).apply(); }
+    public int getFoodStatus() { return prefs.getInt("food_status", 0); }
+    public void setFoodStatus(int num) { prefs.edit().putInt("food_status", num).apply(); }
 
 }

@@ -131,4 +131,11 @@ public class WaysActivity extends AppCompatActivity {
         startActivity(new Intent(this, ChurchWayActivity.class));
         overridePendingTransition(0, 0);
     }
+
+    // Переход на один из маршрутов по нажатию по нему
+    public void foodWay(View view) {
+        manager.setFoodStatus(1);
+        startActivity(new Intent(this, FoodWayActivity.class));
+        overridePendingTransition(0, 0);
+    }
 }

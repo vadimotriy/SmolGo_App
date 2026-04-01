@@ -33,4 +33,10 @@
     <string name="time">Час праходжання:</string>
     <string name="angels">Смаленскія анёлы</string>
     <string name="monuments">Помнікі</string>
+
+    <string name="last_news">Последние новости:</string>
+    <string name="monuments_2">Памятники 2</string>
+    <string name="smolenks_churchs">Храмы Смоленска</string>
+    <string name="restoraunts">Заведений:</string>
+    <string name="food">Гастрономический маршрут</string>
 </resources>

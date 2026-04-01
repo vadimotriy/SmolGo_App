@@ -36,4 +36,7 @@
     <string name="last_news">Последние новости:</string>
     <string name="monuments_2">Памятники 2</string>
     <string name="smolenks_churchs">Храмы Смоленска</string>
+    <string name="restoraunts">Заведений:</string>
+    <string name="food">Гастрономический маршрут</string>
+    <string name="food1">Гастрономический</string>
 </resources>

@@ -131,7 +131,7 @@ public class ChurchWayActivity extends AppCompatActivity {
         }
     }
 
-    // Переход к расположению башен на карте
+    // Переход к расположению храмов на карте
     public void showMap(View view) {
         Intent intent = new Intent(this, MapActivity.class);
         intent.putExtra("cord_first", cords[num][0]);
