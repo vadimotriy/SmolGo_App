@@ -136,7 +136,7 @@
                 app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/year"
+                    android:id="@+id/answer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"

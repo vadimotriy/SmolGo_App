@@ -95,7 +95,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="..."
+                android:text=""
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -127,7 +127,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:padding="16dp"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:visibility="invisible" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton

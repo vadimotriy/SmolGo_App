@@ -96,7 +96,7 @@ public class MonumentQuestActivity extends AppCompatActivity {
     int num;
     SharedManager manager;
     TextView label, about, where, question;
-    TextInputEditText year;
+    TextInputEditText answer;
     ImageView image;
 
     @Override
@@ -112,7 +112,7 @@ public class MonumentQuestActivity extends AppCompatActivity {
         about = findViewById(R.id.about);
         where = findViewById(R.id.where);
         question = findViewById(R.id.question);
-        year = findViewById(R.id.year);
+        answer = findViewById(R.id.answer);
         image = findViewById(R.id.imageWall);
 
         label.setText(labelsText[num]);
@@ -135,9 +135,9 @@ public class MonumentQuestActivity extends AppCompatActivity {
 
     // Переход на следующий квест
     public void nextClick(View view) {
-        String userYear = year.getText().toString().strip();
+        String userAnswer = answer.getText().toString().strip();
 
-        if (userYear.toLowerCase().equals(answersText[num])) {
+        if (userAnswer.toLowerCase().equals(answersText[num])) {
             ++num;
         } else {
             Toast.makeText(this, "Не правильно!", LENGTH_SHORT).show(); return;
@@ -154,7 +154,7 @@ public class MonumentQuestActivity extends AppCompatActivity {
             about.setText(aboutText[num]);
             question.setText(questionText[num]);
             image.setImageResource(monumentsImages[num]);
-            year.setText("");
+            answer.setText("");
             manager.setMonument(num);
         }
     }
