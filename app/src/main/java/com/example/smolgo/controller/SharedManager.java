@@ -11,7 +11,7 @@ public class SharedManager {
     private static SharedManager manager;
 
     private SharedManager(Context context) {
-        prefs = context.getSharedPreferences("my_app_settings", MODE_PRIVATE);
+        prefs = context.getSharedPreferences("settings", MODE_PRIVATE);
     }
 
     public static SharedManager getInstance(Context context) {
@@ -33,13 +33,6 @@ public class SharedManager {
     public void setName(String name) { prefs.edit().putString("name", name).apply(); }
 
 
-    // 4 метода для хранения данных про маршрут "ангелочки Смоленска"
-    public int getAngel() { return prefs.getInt("angel", 0); }
-    public void setAngel(int num) { prefs.edit().putInt("angel", num).apply(); }
-    public int getAngelStatus() { return prefs.getInt("angel_status", 0); }
-    public void setAngelStatus(int num) { prefs.edit().putInt("angel_status", num).apply(); }
-
-
     // 4 метода для хранения данных про квест "Памятники 2"
     public int getMonument2() { return prefs.getInt("monument2", 0); }
     public void setMonument2(int num) { prefs.edit().putInt("monument2", num).apply(); }
@@ -58,5 +51,11 @@ public class SharedManager {
     public void setWall(int num) { prefs.edit().putInt("wall", num).apply(); }
     public int getWallStatus() { return prefs.getInt("wall_status", 0); }
     public void setWallStatus(int num) { prefs.edit().putInt("wall_status", num).apply(); }
+
+    // 4 метода для хранения данных про маршрут "Храмы Смоленска"
+    public int getChurch() { return prefs.getInt("church", 0); }
+    public void setChurch(int num) { prefs.edit().putInt("church", num).apply(); }
+    public int getChurchStatus() { return prefs.getInt("church_status", 0); }
+    public void setChurchStatus(int num) { prefs.edit().putInt("church_status", num).apply(); }
 
 }

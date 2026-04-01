@@ -22,7 +22,7 @@ public class WaysActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
 
-    TextView statusAngel, statusWall;
+    TextView statusChurch, statusWall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,14 +67,14 @@ public class WaysActivity extends AppCompatActivity {
         });
 
         // Установка статусов маршрутов
-        statusAngel = findViewById(R.id.status_angel);
-        switch (manager.getAngelStatus()) {
+        statusChurch = findViewById(R.id.status_church);
+        switch (manager.getChurchStatus()) {
             case 0:
-                statusAngel.setText("Не пройдено");  break;
+                statusChurch.setText("Не пройдено");  break;
             case 1:
-                statusAngel.setText("В процессе");  break;
+                statusChurch.setText("В процессе");  break;
             case 2:
-                statusAngel.setText("Пройдено");  break;
+                statusChurch.setText("Пройдено");  break;
         }
 
         statusWall = findViewById(R.id.status_wall);
@@ -99,13 +99,13 @@ public class WaysActivity extends AppCompatActivity {
         super.onResume();
         bottomNavigationView.setSelectedItemId(R.id.navigation_ways);
 
-        switch (manager.getAngelStatus()) {
+        switch (manager.getChurchStatus()) {
             case 0:
-                statusAngel.setText("Не пройдено");  break;
+                statusChurch.setText("Не пройдено");  break;
             case 1:
-                statusAngel.setText("В процессе");  break;
+                statusChurch.setText("В процессе");  break;
             case 2:
-                statusAngel.setText("Пройдено");  break;
+                statusChurch.setText("Пройдено");  break;
         }
 
         switch (manager.getWallStatus()) {
@@ -119,16 +119,16 @@ public class WaysActivity extends AppCompatActivity {
     }
 
     // Переход на один из маршрутов по нажатию по нему
-    public void angelWay(View view) {
-        manager.setAngelStatus(1);
-        startActivity(new Intent(this, AngelWayActivity.class));
-        overridePendingTransition(0, 0);
-    }
-
-    // Переход на один из маршрутов по нажатию по нему
     public void wallWay(View view) {
         manager.setWallStatus(1);
         startActivity(new Intent(this, WallWayActivity.class));
+        overridePendingTransition(0, 0);
+    }
+    
+    // Переход на один из маршрутов по нажатию по нему
+    public void churchWay(View view) {
+        manager.setChurchStatus(1);
+        startActivity(new Intent(this, ChurchWayActivity.class));
         overridePendingTransition(0, 0);
     }
 }

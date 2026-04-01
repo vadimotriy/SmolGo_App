@@ -64,19 +64,19 @@ public class AchievmetsActivity extends AppCompatActivity {
             return false;
         });
 
-        int waysNum = (manager.getAngelStatus() == 2 ? 1 : 0) + (manager.getWallStatus() == 2 ? 1 : 0);
+//        int waysNum = (manager.getAngelStatus() == 2 ? 1 : 0) + (manager.getWallStatus() == 2 ? 1 : 0);
         int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0) + (manager.getMonumentStatus2() == 2 ? 1 : 0);
 
         // Заполнение PorgresBar
         barWays = findViewById(R.id.progressBarWays);
-        barWays.setProgress(waysNum);
+//        barWays.setProgress(waysNum);
 
         barQuests = findViewById(R.id.progressBarQuests);
         barQuests.setProgress(questsNum);
 
         // Заполнение количества пройденных маршрутов/квестов
         numWays = findViewById(R.id.ways_number);
-        numWays.setText(Integer.toString(waysNum));
+//        numWays.setText(Integer.toString(waysNum));
 
         numQuests = findViewById(R.id.quests_number);
         numQuests.setText(Integer.toString(questsNum));

@@ -125,14 +125,14 @@
 
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:onClick="angelWay">
+                android:onClick="churchWay">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:gravity="left"
-                    android:text="@string/angels"
+                    android:text="@string/smolenks_churchs"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="24dp"
                     android:textColor="?attr/colorOnSurface"
@@ -156,7 +156,7 @@
                         android:textSize="20sp"/>
 
                     <TextView
-                        android:id="@+id/status_angel"
+                        android:id="@+id/status_church"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
@@ -190,7 +190,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:gravity="right"
-                        android:text="5 ч."
+                        android:text="4 ч."
                         android:layout_marginEnd="24dp"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="20sp"

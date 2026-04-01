@@ -90,7 +90,7 @@ public class Monument2QuestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_monumets2_quest);
 
         manager = SharedManager.getInstance(this);
-        num = manager.getMonument();
+        num = manager.getMonument2();
 
         label = findViewById(R.id.info);
         about = findViewById(R.id.about);
@@ -131,7 +131,7 @@ public class Monument2QuestActivity extends AppCompatActivity {
         }
 
         // Если все памятники пройдены, то переход на активность финиша
-        if (num == 7) { manager.setMonument(0); manager.setMonumentStatus2(2); startActivity(new Intent(this, FinalActivity.class)); }
+        if (num == 7) { manager.setMonument2(0); manager.setMonumentStatus2(2); startActivity(new Intent(this, FinalActivity.class)); }
         else {
             label.setText(labelsText[num]);
             about.setText(aboutText[num]);
@@ -139,7 +139,7 @@ public class Monument2QuestActivity extends AppCompatActivity {
             image.setImageResource(monumentsImages[num]);
             answer.setText("");
             answer.setVisibility(VISIBLE);
-            manager.setMonument(num);
+            manager.setMonument2(num);
         }
     }
 }

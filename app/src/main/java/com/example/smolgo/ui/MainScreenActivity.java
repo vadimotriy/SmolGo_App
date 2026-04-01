@@ -70,10 +70,10 @@ public class MainScreenActivity extends AppCompatActivity {
         quests = findViewById(R.id.quests_number);
         achievments = findViewById(R.id.achievments_number);
 
-        int waysNum = (manager.getAngelStatus() == 2 ? 1 : 0) + (manager.getWallStatus() == 2 ? 1 : 0);
+//        int waysNum = (manager.getAngelStatus() == 2 ? 1 : 0) + (manager.getWallStatus() == 2 ? 1 : 0);
         int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0);
 
-        ways.setText(Integer.toString(waysNum));
+//        ways.setText(Integer.toString(waysNum));
         quests.setText(Integer.toString(questsNum));
         achievments.setText("0");
 
