@@ -22,12 +22,13 @@ import com.yandex.mapkit.mapview.MapView;
 import com.yandex.runtime.image.ImageProvider;
 import com.yandex.mapkit.map.TextStyle;
 
-
+// Активность для работы с картой
 public class MapActivity extends AppCompatActivity {
     MapView mapView;
     TextView title;
     private String titleText, objectName;
     private double cordX, cordY;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,7 @@ public class MapActivity extends AppCompatActivity {
         });
     }
 
+    // Запуск карты
     @Override
     protected void onStart() {
         super.onStart();
@@ -60,12 +62,15 @@ public class MapActivity extends AppCompatActivity {
         PlacemarkMapObject placemark = mapView.getMap().getMapObjects().addPlacemark();
         placemark.setGeometry(new Point(cordX, cordY));
 
+        // Текст и его стиль
         TextStyle textStyle = new TextStyle().setSize(15f).setPlacement(TextStyle.Placement.TOP).setOffset(5f);
         placemark.setText(objectName, textStyle);
 
+        // Иконка и ее стиль
         IconStyle iconStyle = new IconStyle().setScale(0.5f);
         placemark.setIcon(ImageProvider.fromResource(this, R.drawable.map_pin), iconStyle);
 
+        // Приближение
         mapView.getMap().move(
                 new CameraPosition(new Point(cordX, cordY), 18.0f, 0.0f, 0.0f),
                 new Animation(Animation.Type.SMOOTH, 2),
@@ -73,6 +78,7 @@ public class MapActivity extends AppCompatActivity {
         );
     }
 
+    // Закрытие карты
     @Override
     protected void onStop() {
         mapView.onStop();
@@ -80,6 +86,7 @@ public class MapActivity extends AppCompatActivity {
         super.onStop();
     }
 
+    // Выход из активности
     public void backActivity(View view) {
         finish();
     }

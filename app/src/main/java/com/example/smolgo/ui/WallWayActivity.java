@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 
+// Активность с маршрутом "Крепостная стена"
 public class WallWayActivity extends AppCompatActivity {
     // Массив с названиями башен
     String[] labelsText = {

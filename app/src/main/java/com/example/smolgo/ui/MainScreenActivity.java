@@ -75,7 +75,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
         ways.setText(Integer.toString(waysNum));
         quests.setText(Integer.toString(questsNum));
-        achievments.setText(Integer.toString(manager.getAchievments()));
+        achievments.setText("0");
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

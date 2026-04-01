@@ -28,11 +28,6 @@ public class SharedManager {
     public void setIsLogin(boolean state) { prefs.edit().putBoolean("isLogin", state).apply(); }
 
 
-    // 2 метода для хранения количества достижений
-    public int getAchievments() { return prefs.getInt("achievments", 0); }
-    public void addAchievments() { prefs.edit().putInt("achievments", getAchievments() + 1).apply(); }
-
-
     // 2 метода для хранения имя пользователя
     public String getName() { return prefs.getString("name", ""); }
     public void setName(String name) { prefs.edit().putString("name", name).apply(); }

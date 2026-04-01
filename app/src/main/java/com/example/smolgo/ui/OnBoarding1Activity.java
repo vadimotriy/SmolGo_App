@@ -12,8 +12,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.smolgo.R;
 
+// Активность для первого онбординга
 public class OnBoarding1Activity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

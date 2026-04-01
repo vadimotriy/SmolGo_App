@@ -29,6 +29,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+// Активность для входа
 public class LoginActivity extends AppCompatActivity {
     TextInputEditText emailInput, passwordInput;
     SharedManager manager;
@@ -53,11 +54,11 @@ public class LoginActivity extends AppCompatActivity {
 
     // Вход по нажатию на кнопку
     public void login(View view) {
+        Intent mainScreen = new Intent(this, MainScreenActivity.class);
+
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
         LoginRequest request = new LoginRequest(email, password);
-
-        Intent mainScreen = new Intent(this, MainScreenActivity.class);
 
         Retrofit builder = new Retrofit.Builder().baseUrl("https://web-production-2e91f.up.railway.app/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -65,13 +66,18 @@ public class LoginActivity extends AppCompatActivity {
         builder.create(Api.class).login(request).enqueue(new Callback<LoginResponce>() {
             @Override
             public void onResponse(Call<LoginResponce> call, Response<LoginResponce> response) {
+                // Успешный вход
                 if (response.body().message.equals("Succes")) {
                     String name = response.body().name;
                     manager.setIsLogin(true); manager.setName(name);
                     startActivity(mainScreen);
-                } else if (response.body().message.equals("Email has not been used")) {
+                }
+                // Email еще не зарегестрирован
+                else if (response.body().message.equals("Email has not been used")) {
                     Toast.makeText(LoginActivity.this, "Email не зарегестрирован", LENGTH_SHORT).show();
-                } else {
+                }
+                // Неверный пароль
+                else {
                     Toast.makeText(LoginActivity.this, "Неверный пароль", LENGTH_SHORT).show();
                 }
             }
@@ -79,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<LoginResponce> call, Throwable t) {
                 Log.e("SmolGo_Login", t.toString());
-                Toast.makeText(LoginActivity.this, "Error: " + t.toString(), LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Нет соединения с сервером. Проверьте наличия интернета", LENGTH_SHORT).show();
             }
         });
     }

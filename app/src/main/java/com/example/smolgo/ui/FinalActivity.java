@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.smolgo.R;
 
+// Активность для активонсти финиша
 public class FinalActivity extends AppCompatActivity {
 
     @Override
@@ -19,6 +20,7 @@ public class FinalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_final);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0);
@@ -26,6 +28,7 @@ public class FinalActivity extends AppCompatActivity {
         });
     }
 
+    // Выход на главный экран
     public void toMainScreen(View view) {
         startActivity(new Intent(this, MainScreenActivity.class));
         overridePendingTransition(0, 0);

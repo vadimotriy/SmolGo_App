@@ -32,6 +32,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+// Активность для регистрации
 public class SignUpActivity extends AppCompatActivity {
     TextInputEditText nameInput, emailInput, passwordInput;
     SharedManager manager;
@@ -57,12 +58,12 @@ public class SignUpActivity extends AppCompatActivity {
 
     // Регистрация по нажатию на кнопку
     public void signUp(View view) {
+        Intent mainScreen = new Intent(this, MainScreenActivity.class);
+
         String name = nameInput.getText().toString();
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
         RegisterRequest request = new RegisterRequest(name, email, password);
-
-        Intent mainScreen = new Intent(this, MainScreenActivity.class);
 
         Retrofit builder = new Retrofit.Builder().baseUrl("https://web-production-2e91f.up.railway.app/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -70,10 +71,13 @@ public class SignUpActivity extends AppCompatActivity {
         builder.create(Api.class).signUp(request).enqueue(new Callback<RegisterResponce>() {
             @Override
             public void onResponse(Call<RegisterResponce> call, Response<RegisterResponce> response) {
+                // Успешная регистрация
                 if (response.body().message.equals("Succes")) {
                     manager.setIsLogin(true); manager.setName(name);
                     startActivity(mainScreen);
-                } else {
+                }
+                // Email уже занят
+                else {
                     Toast.makeText(SignUpActivity.this, "Email уже используется", LENGTH_SHORT).show();
                 }
             }
@@ -81,7 +85,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<RegisterResponce> call, Throwable t) {
                 Log.e("SmolGo_SignUp", t.toString());
-                Toast.makeText(SignUpActivity.this, "Error: " + t.toString(), LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, "Нет соединения с сервером. Проверьте наличия интернета", LENGTH_SHORT).show();
             }
         });
     }
