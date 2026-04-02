@@ -67,4 +67,12 @@ public class SharedManager {
     public int getFoodStatus() { return prefs.getInt("food_status", 0); }
     public void setFoodStatus(int num) { prefs.edit().putInt("food_status", num).apply(); }
 
+
+    // 6 методов для хранения данных про викторину "Крепостная стена"
+    public int getWallQuestion() { return prefs.getInt("wall_question", 0); }
+    public void setWallQuestion(int num) { prefs.edit().putInt("wall_question", num).apply(); }
+    public int getWallQuestionStatus() { return prefs.getInt("wall_question_status", 0); }
+    public void setWallQuestionStatus(int num) { prefs.edit().putInt("wall_question_status", num).apply(); }
+    public int getWallQuestionResult() { return prefs.getInt("wall_question_result", 0); }
+    public void setWallQuestionResult(int num) { prefs.edit().putInt("wall_question_result", num).apply(); }
 }

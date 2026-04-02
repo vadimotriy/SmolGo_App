@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.ChurchWayActivity">
+    tools:context=".ui.WallQuestionActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -33,7 +33,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:text="@string/smolenks_churchs"
+            android:text="@string/wall"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp" />
@@ -51,8 +51,8 @@
             android:gravity="center_horizontal">
 
             <TextView
-                android:layout_marginTop="40dp"
-                android:id="@+id/info"
+                android:layout_marginTop="30dp"
+                android:id="@+id/question"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -63,44 +63,61 @@
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="32sp" />
 
-            <TextView
-                android:layout_marginTop="15dp"
-                android:id="@+id/where"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="TextView"
-
-                android:textAlignment="center"
-                android:textColor="@color/link"
-                android:textSize="18sp"
-                android:onClick="showMap"/>
-
-            <ImageView
+            <RadioGroup
                 android:layout_marginTop="30dp"
-                android:id="@+id/imageChurch"
+                android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_height="match_parent" >
 
-            <TextView
-                android:layout_marginTop="50dp"
-                android:id="@+id/about"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="TextView"
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/variant1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="RadioButton"
+                    android:textSize="24sp"
+                    android:textColor="?attr/colorOnSurface"
+                    app:useMaterialThemeColors="false"
+                    app:buttonTint="@color/radio_button_selector" />
 
-                android:textAlignment="center"
-                android:textColor="?attr/colorOnError"
-                android:textSize="18sp" />
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/variant2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="RadioButton"
+                    android:textSize="24sp"
+                    android:textColor="?attr/colorOnSurface"
+                    app:useMaterialThemeColors="false"
+                    app:buttonTint="@color/radio_button_selector" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/variant3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="RadioButton"
+                    android:textSize="24sp"
+                    android:textColor="?attr/colorOnSurface"
+                    app:useMaterialThemeColors="false"
+                    app:buttonTint="@color/radio_button_selector" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/variant4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="RadioButton"
+                    android:textSize="24sp"
+                    android:textColor="?attr/colorOnSurface"
+                    app:useMaterialThemeColors="false"
+                    app:buttonTint="@color/radio_button_selector" />
+
+            </RadioGroup>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_marginTop="50dp"
@@ -111,7 +128,7 @@
                 android:fontFamily="@font/roboto_medium"
                 android:onClick="nextClick"
 
-                android:text="@string/next"
+                android:text="@string/answer"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="16dp" />

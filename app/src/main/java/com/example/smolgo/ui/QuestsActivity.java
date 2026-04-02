@@ -55,7 +55,7 @@ public class QuestsActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
                 return true;
             } else if (id == R.id.navigation_settings) {
-                startActivity(new Intent(this, SettingsActivity.class));
+                startActivity(new Intent(this, QuestionsActivity.class));
                 overridePendingTransition(0, 0);
                 return true;
             }
@@ -122,6 +122,7 @@ public class QuestsActivity extends AppCompatActivity {
         overridePendingTransition(0, 0);
     }
 
+    // Переход на один из квестов по нажатию по нему
     public void monument2(View view) {
         manager.setMonumentStatus2(1);
         startActivity(new Intent(this, Monument2QuestActivity.class));

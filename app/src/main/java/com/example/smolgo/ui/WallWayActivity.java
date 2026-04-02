@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -126,20 +127,22 @@ public class WallWayActivity extends AppCompatActivity {
     SharedManager manager;
     TextView label, about, where;
     ImageView image;
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_wall_way);
-        manager = SharedManager.getInstance(this);
 
+        manager = SharedManager.getInstance(this);
         num = manager.getWall();
 
         label = findViewById(R.id.info);
         where = findViewById(R.id.where);
         about = findViewById(R.id.about);
         image = findViewById(R.id.imageWall);
+        scrollView = findViewById(R.id.scrollView);
 
         label.setText(labelsText[num]);
         where.setText(whereText[num]);
@@ -172,6 +175,8 @@ public class WallWayActivity extends AppCompatActivity {
             about.setText(aboutText[num]);
             image.setImageResource(towerImages[num]);
             manager.setWall(num);
+
+            scrollView.post(() -> scrollView.fullScroll(View.FOCUS_UP));
         }
     }
 

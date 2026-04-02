@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -56,7 +57,7 @@ public class FoodWayActivity extends AppCompatActivity {
     SharedManager manager;
     TextView label, about, where;
     ImageView image;
-
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,7 @@ public class FoodWayActivity extends AppCompatActivity {
         where = findViewById(R.id.where);
         about = findViewById(R.id.about);
         image = findViewById(R.id.imageFood);
+        scrollView = findViewById(R.id.scrollView);
 
         label.setText(labelsText[num]);
         where.setText(whereText[num]);
@@ -103,6 +105,8 @@ public class FoodWayActivity extends AppCompatActivity {
             about.setText(aboutText[num]);
             image.setImageResource(towerImages[num]);
             manager.setFood(num);
+
+            scrollView.post(() -> scrollView.fullScroll(View.FOCUS_UP));
         }
     }
 

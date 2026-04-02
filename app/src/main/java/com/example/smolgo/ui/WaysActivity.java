@@ -59,7 +59,7 @@ public class WaysActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
                 return true;
             } else if (id == R.id.navigation_settings) {
-                startActivity(new Intent(this, SettingsActivity.class));
+                startActivity(new Intent(this, QuestionsActivity.class));
                 overridePendingTransition(0, 0);
                 return true;
             }

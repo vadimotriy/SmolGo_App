@@ -39,4 +39,7 @@
     <string name="restoraunts">Заведений:</string>
     <string name="food">Гастрономический маршрут</string>
     <string name="food1">Гастрономический</string>
+    <string name="questions">Викторины</string>
+    <string name="result">Результат:</string>
+    <string name="answer">Ответить</string>
 </resources>

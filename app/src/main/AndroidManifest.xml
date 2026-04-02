@@ -17,6 +17,12 @@
         android:theme="@style/Theme.SmolGo"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.WallQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.QuestionsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.FoodWayActivity"
             android:exported="false" />
         <activity

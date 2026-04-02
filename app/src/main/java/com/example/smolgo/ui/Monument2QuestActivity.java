@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -82,6 +83,7 @@ public class Monument2QuestActivity extends AppCompatActivity {
     TextView label, about, question;
     TextInputEditText answer;
     ImageView image;
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +99,7 @@ public class Monument2QuestActivity extends AppCompatActivity {
         question = findViewById(R.id.question);
         answer = findViewById(R.id.answer);
         image = findViewById(R.id.imageWall);
+        scrollView = findViewById(R.id.scrollView);
 
         label.setText(labelsText[num]);
         about.setText(aboutText[num]);
@@ -140,6 +143,8 @@ public class Monument2QuestActivity extends AppCompatActivity {
             answer.setText("");
             answer.setVisibility(VISIBLE);
             manager.setMonument2(num);
+
+            scrollView.post(() -> scrollView.fullScroll(View.FOCUS_UP));
         }
     }
 }

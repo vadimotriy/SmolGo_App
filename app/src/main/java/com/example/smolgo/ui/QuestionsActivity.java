@@ -1,13 +1,9 @@
 package com.example.smolgo.ui;
 
-import static android.widget.Toast.LENGTH_SHORT;
-
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,16 +15,17 @@ import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainScreenActivity extends AppCompatActivity {
+// Активность с викторинами
+public class QuestionsActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
-    TextView ways, quests, achievments;
+    TextView statusWall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main_screen);
+        setContentView(R.layout.activity_questions);
 
         manager = SharedManager.getInstance(this);
 
@@ -40,10 +37,15 @@ public class MainScreenActivity extends AppCompatActivity {
 
         // Настройка BottomNavigationView
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
 
-            if (id == R.id.navigation_home) {
+            if (id == R.id.navigation_settings) {
+                return true;
+            } else if (id == R.id.navigation_home) {
+                startActivity(new Intent(this, MainScreenActivity.class));
+                overridePendingTransition(0, 0);
                 return true;
             } else if (id == R.id.navigation_ways) {
                 startActivity(new Intent(this, WaysActivity.class));
@@ -57,47 +59,43 @@ public class MainScreenActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AchievmetsActivity.class));
                 overridePendingTransition(0, 0);
                 return true;
-            } else if (id == R.id.navigation_settings) {
-                startActivity(new Intent(this, QuestionsActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
             }
             return false;
         });
 
-        // Заполнение краткой информации
-        ways = findViewById(R.id.ways_number);
-        quests = findViewById(R.id.quests_number);
-        achievments = findViewById(R.id.achievments_number);
+        statusWall = findViewById(R.id.status_wall);
 
-//        int waysNum = (manager.getAngelStatus() == 2 ? 1 : 0) + (manager.getWallStatus() == 2 ? 1 : 0);
-        int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0);
-
-//        ways.setText(Integer.toString(waysNum));
-        quests.setText(Integer.toString(questsNum));
-        achievments.setText("0");
+        // Выставление результатов викторин
+        if (manager.getWallQuestionStatus() == 2) {
+            statusWall.setText(manager.getWallQuestionResult() + " / 5");
+        } else if (manager.getWallQuestionStatus() == 1) {
+            statusWall.setText("В процессе");
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(0, 0, 0, 0);
+            v.setPadding(systemBars.left, 0, systemBars.right, 0);
             return insets;
         });
     }
 
+    // Обновление bottom navigation и результатов викторин
     @Override
     protected void onResume() {
         super.onResume();
-        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
+
+        if (manager.getWallQuestionStatus() == 2) {
+            statusWall.setText(manager.getWallQuestionResult() + " / 5");
+        } else if (manager.getWallQuestionStatus() == 1) {
+            statusWall.setText("В процессе");
+        }
     }
 
-    public void loadNews(View view) {
-        Toast.makeText(MainScreenActivity.this, "Новых новостей нет.", LENGTH_SHORT).show();
-    }
-
-    public void firstNews(View view) {
-        String url = "https://vk.ru/wall-235677777_1";
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        startActivity(intent);
+    // Переход на одну из викторин
+    public void wallQuestions(View view) {
+        manager.setWallQuestionStatus(1);
+        startActivity(new Intent(this, WallQuestionActivity.class));
+        overridePendingTransition(0, 0);
     }
 }

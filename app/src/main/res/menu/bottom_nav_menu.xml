@@ -13,12 +13,14 @@
         android:id="@+id/navigation_quests"
         android:icon="@drawable/ic_quests"
         android:title="@string/quests" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_questions"
+        android:title="@string/questions" />
+
     <item
         android:id="@+id/navigation_achievmnets"
         android:icon="@drawable/ic_achievments"
         android:title="@string/achievments" />
-    <item
-        android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/settings" />
 </menu>
