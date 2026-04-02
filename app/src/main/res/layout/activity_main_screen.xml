@@ -273,7 +273,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/img" />
+                    app:srcCompat="@drawable/img_news_load" />
 
                 <TextView
                     android:id="@+id/NewsTitle1"
@@ -341,7 +341,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/img" />
+                    app:srcCompat="@drawable/img_news_load" />
 
                 <TextView
                     android:id="@+id/NewsTitle2"
@@ -409,7 +409,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/img" />
+                    app:srcCompat="@drawable/img_news_load" />
 
                 <TextView
                     android:id="@+id/NewsTitle3"

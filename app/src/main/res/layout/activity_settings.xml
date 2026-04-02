@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="280dp"
 
                 android:fontFamily="@font/roboto_medium"
                 android:text="@string/vk"
@@ -119,6 +119,11 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:textSize="24sp"
                 app:cornerRadius="16dp" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
         </LinearLayout>
     </ScrollView>
