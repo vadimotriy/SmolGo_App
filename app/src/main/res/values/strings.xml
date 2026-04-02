@@ -44,4 +44,6 @@
     <string name="answer">Ответить</string>
     <string name="yandex">Условия использования отдельных сервисов Яндекс Карт</string>
     <string name="vk">Подписаться в ВК</string>
+    <string name="title_news">Загрузка</string>
+    <string name="text_news">Пока новости загружаются, советуем вам подписаться на наше сообщество в ВК, где вы сможете узнавать все самые важные новости нашего грода самыми первыми!</string>
 </resources>

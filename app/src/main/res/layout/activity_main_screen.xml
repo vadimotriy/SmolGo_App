@@ -268,13 +268,15 @@
                 app:layout_constraintVertical_bias="0.45"
                 android:onClick="firstNews">
 
-                <com.google.android.material.imageview.ShapeableImageView
+                <ImageView
+                    android:id="@+id/NewsImageView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/img_slavutich" />
+                    app:srcCompat="@drawable/img" />
 
                 <TextView
+                    android:id="@+id/NewsTitle1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -283,13 +285,13 @@
                     android:drawablePadding="15dp"
                     android:fontFamily="@font/roboto_medium"
                     android:gravity="left"
-                    android:text="Победа Славутича – 2:1!"
+                    android:text="@string/title_news"
                     android:textColor="?attr/colorOnSurface"
                     android:textSize="28sp"
                     android:textStyle="bold"/>
 
-
                 <TextView
+                    android:id="@+id/NewsText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -297,11 +299,12 @@
                     android:layout_marginEnd="10dp"
                     android:fontFamily="@font/roboto_medium"
                     android:gravity="left"
-                    android:text="И снова напряженная игра: основное время завершилось со счётом 1:1. Но наши парни сумели вырвать победу – решающая шайба была заброшена в овертайме."
+                    android:text="@string/text_news"
                     android:textColor="?attr/colorOnSurface"
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/NewsDate1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -313,7 +316,142 @@
                     android:textColor="?attr/colorOnSurface"
                     android:textSize="12sp"
                     android:textStyle="italic"/>
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/shape_card"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.45"
+                android:onClick="firstNews">
+
+                <ImageView
+                    android:id="@+id/NewsImageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/img" />
+
+                <TextView
+                    android:id="@+id/NewsTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="left"
+                    android:text="@string/title_news"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="28sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/NewsText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="left"
+                    android:text="@string/text_news"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/NewsDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="left"
+                    android:text="19.03.2026"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="12sp"
+                    android:textStyle="italic"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/shape_card"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.45"
+                android:onClick="firstNews">
+
+                <ImageView
+                    android:id="@+id/NewsImageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/img" />
+
+                <TextView
+                    android:id="@+id/NewsTitle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="left"
+                    android:text="@string/title_news"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="28sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/NewsText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="left"
+                    android:text="@string/text_news"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/NewsDate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="left"
+                    android:text="19.03.2026"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="12sp"
+                    android:textStyle="italic"/>
             </LinearLayout>
 
             <View

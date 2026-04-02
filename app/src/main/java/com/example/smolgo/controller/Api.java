@@ -2,6 +2,7 @@ package com.example.smolgo.controller;
 
 import com.example.smolgo.models.LoginRequest;
 import com.example.smolgo.models.LoginResponce;
+import com.example.smolgo.models.NewsResponce;
 import com.example.smolgo.models.RegisterRequest;
 import com.example.smolgo.models.RegisterResponce;
 
@@ -20,4 +21,8 @@ public interface Api {
     // Вход
     @POST("login")
     Call<LoginResponce> login(@Body LoginRequest request);
+
+    // Новости
+    @GET("get_news")
+    Call<NewsResponce> getNews();
 }

@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 public class SharedManager {
     private SharedPreferences prefs;
     private static SharedManager manager;
+    private String URL = "https://sun9-61.userapi.com/s/v1/ig2/4AMb_GxUlDBfcLHL7Owhq01RFKOFx6w4ZhupG8e1qGdUCdFGXJZLL37XjaSYl8iUipTSZmT_VrwZVxhBLkOW00zQ.jpg?quality=95&crop=0,0,1280,853&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853&from=bu&u=NPtitNTRi-5sRwPAYCC9sMR3fVd1_hCY1aCqbYu9BTY&cs=1280x0";
 
     private SharedManager(Context context) {
         prefs = context.getSharedPreferences("settings", MODE_PRIVATE);
@@ -26,6 +27,10 @@ public class SharedManager {
     // 2 метода для хранения состояния входа
     public boolean getIsLogin() { return prefs.getBoolean("isLogin", false); }
     public void setIsLogin(boolean state) { prefs.edit().putBoolean("isLogin", state).apply(); }
+
+    // 2 метода для хранения состояния новостей
+    public boolean getIsNews() { return prefs.getBoolean("isNews", false); }
+    public void setIsNews(boolean state) { prefs.edit().putBoolean("isNews", state).apply(); }
 
 
     // 2 метода для хранения имя пользователя
@@ -75,4 +80,34 @@ public class SharedManager {
     public void setWallQuestionStatus(int num) { prefs.edit().putInt("wall_question_status", num).apply(); }
     public int getWallQuestionResult() { return prefs.getInt("wall_question_result", 0); }
     public void setWallQuestionResult(int num) { prefs.edit().putInt("wall_question_result", num).apply(); }
+
+
+    // 24 методов для хранения данных про викторину "Крепостная стена"
+    public String getTitle1() { return prefs.getString("title1", ""); }
+    public String getTitle2() { return prefs.getString("title2", ""); }
+    public String getTitle3() { return prefs.getString("title3", ""); }
+    public void setTitle1(String text) { prefs.edit().putString("title1", text).apply(); }
+    public void setTitle2(String text) { prefs.edit().putString("title2", text).apply(); }
+    public void setTitle3(String text) { prefs.edit().putString("title3", text).apply(); }
+
+    public String getText1() { return prefs.getString("text1", ""); }
+    public String getText2() { return prefs.getString("text2", ""); }
+    public String getText3() { return prefs.getString("text3", ""); }
+    public void setText1(String text) { prefs.edit().putString("text1", text).apply(); }
+    public void setText2(String text) { prefs.edit().putString("text2", text).apply(); }
+    public void setText3(String text) { prefs.edit().putString("text3", text).apply(); }
+
+    public String getDate1() { return prefs.getString("date1", "01.01.1970"); }
+    public String getDate2() { return prefs.getString("date2", "01.01.1970"); }
+    public String getDate3() { return prefs.getString("date3", "01.01.1970"); }
+    public void setDate1(String text) { prefs.edit().putString("date1", text).apply(); }
+    public void setDate2(String text) { prefs.edit().putString("date2", text).apply(); }
+    public void setDate3(String text) { prefs.edit().putString("date3", text).apply(); }
+
+    public String getLink1() { return prefs.getString("link1", URL); }
+    public String getLink2() { return prefs.getString("link2", URL); }
+    public String getLink3() { return prefs.getString("link3", URL); }
+    public void setLink1(String text) { prefs.edit().putString("link1", text).apply(); }
+    public void setLink2(String text) { prefs.edit().putString("link2", text).apply(); }
+    public void setLink3(String text) { prefs.edit().putString("link3", text).apply(); }
 }
