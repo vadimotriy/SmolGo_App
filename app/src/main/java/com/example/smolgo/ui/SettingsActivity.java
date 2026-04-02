@@ -1,6 +1,7 @@
 package com.example.smolgo.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -15,9 +16,9 @@ import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+// Активность настроек
 public class SettingsActivity extends AppCompatActivity {
     SharedManager manager;
-    BottomNavigationView bottomNavigationView;
     TextView helloName;
 
     @Override
@@ -33,33 +34,6 @@ public class SettingsActivity extends AppCompatActivity {
             startActivity(activity);
         }
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            int id = item.getItemId();
-
-            if (id == R.id.navigation_settings) {
-                return true;
-            } else if (id == R.id.navigation_home) {
-                startActivity(new Intent(this, MainScreenActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
-            } else if (id == R.id.navigation_ways) {
-                startActivity(new Intent(this, WaysActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
-            } else if (id == R.id.navigation_quests) {
-                startActivity(new Intent(this, QuestsActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
-            } else if (id == R.id.navigation_achievmnets) {
-                startActivity(new Intent(this, AchievmetsActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
-            }
-            return false;
-        });
-
         helloName = findViewById(R.id.helloName);
         helloName.setText(helloName.getText().toString() + " " + manager.getName() + "!");
 
@@ -70,15 +44,31 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
-    }
-
+    // Выход из аккаунта
     public void logout(View view) {
         manager.setIsLogin(false);
         startActivity(new Intent(this, SignUpActivity.class));
         overridePendingTransition(0, 0);
+    }
+
+    // Переход на URL yandexAPI
+    public void yandexLink(View view) {
+        String url = "https://yandex.ru/legal/maps_api/";
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
+    }
+
+    // Переход на URL ВК сообщества
+    public void vkLink(View view) {
+        String url = "https://vk.com/club235677777";
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
+    }
+
+    // Выход из активности
+    public void backActivity(View view) {
+        finish();
     }
 }

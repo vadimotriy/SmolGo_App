@@ -15,6 +15,7 @@ import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+// Активность с квестами
 public class QuestsActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
@@ -72,7 +73,7 @@ public class QuestsActivity extends AppCompatActivity {
             case 2:
                 statusMonument.setText("Пройдено");  break;
         }
-        // Установка статусов квестов
+
         statusMonument2 = findViewById(R.id.status_monument_2);
         switch (manager.getMonumentStatus2()) {
             case 0:
@@ -91,6 +92,7 @@ public class QuestsActivity extends AppCompatActivity {
         });
     }
 
+    // Обновление bottom navigation и статусов квестов
     @Override
     protected void onResume() {
         super.onResume();

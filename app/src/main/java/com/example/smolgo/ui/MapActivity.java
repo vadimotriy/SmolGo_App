@@ -68,7 +68,7 @@ public class MapActivity extends AppCompatActivity {
 
         // Иконка и ее стиль
         IconStyle iconStyle = new IconStyle().setScale(0.5f);
-        placemark.setIcon(ImageProvider.fromResource(this, R.drawable.map_pin), iconStyle);
+        placemark.setIcon(ImageProvider.fromResource(this, R.drawable.img_map_pin), iconStyle);
 
         // Приближение
         mapView.getMap().move(

@@ -19,6 +19,7 @@ import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+// Активность главного экрана
 public class MainScreenActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
@@ -84,20 +85,29 @@ public class MainScreenActivity extends AppCompatActivity {
         });
     }
 
+    // Обновление bottom navigation
     @Override
     protected void onResume() {
         super.onResume();
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
     }
 
+    // Загрузка новых новостей
     public void loadNews(View view) {
         Toast.makeText(MainScreenActivity.this, "Новых новостей нет.", LENGTH_SHORT).show();
     }
 
+    // Переход на URL первой новости
     public void firstNews(View view) {
         String url = "https://vk.ru/wall-235677777_1";
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
         startActivity(intent);
+    }
+
+    // Открытие настроек
+    public void openSettings(View view) {
+        startActivity(new Intent(this, SettingsActivity.class));
+        overridePendingTransition(0, 0);
     }
 }

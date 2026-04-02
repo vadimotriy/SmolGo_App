@@ -16,6 +16,7 @@ import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 
+// Активность с достижениями
 public class AchievmetsActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
@@ -88,6 +89,7 @@ public class AchievmetsActivity extends AppCompatActivity {
         });
     }
 
+    // Обновление bottom navigation
     @Override
     protected void onResume() {
         super.onResume();

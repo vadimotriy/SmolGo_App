@@ -18,6 +18,7 @@ import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+// Активность с маршрутами
 public class WaysActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
@@ -94,6 +95,7 @@ public class WaysActivity extends AppCompatActivity {
         });
     }
 
+    // Обновление bottom navigation и статусов маршрутов
     @Override
     protected void onResume() {
         super.onResume();

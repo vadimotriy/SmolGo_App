@@ -42,4 +42,6 @@
     <string name="questions">Викторины</string>
     <string name="result">Результат:</string>
     <string name="answer">Ответить</string>
+    <string name="yandex">Условия использования отдельных сервисов Яндекс Карт</string>
+    <string name="vk">Подписаться в ВК</string>
 </resources>
