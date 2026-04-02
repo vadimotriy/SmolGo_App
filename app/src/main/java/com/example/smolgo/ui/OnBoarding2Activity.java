@@ -30,6 +30,6 @@ public class OnBoarding2Activity extends AppCompatActivity {
     // Переход на следующий onboarding
     public void nextActivity(View view) {
         Intent onBoarding3 = new Intent(this, OnBoarding3Activity.class);
-        startActivity(onBoarding3);
+        startActivity(onBoarding3); finish();
     }
 }

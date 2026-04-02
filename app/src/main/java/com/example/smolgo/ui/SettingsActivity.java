@@ -31,7 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         if (!manager.getIsLogin()) {
             Intent activity = new Intent(this, OnBoarding1Activity.class);
-            startActivity(activity);
+            startActivity(activity); finish();
         }
 
         helloName = findViewById(R.id.helloName);
@@ -48,7 +48,7 @@ public class SettingsActivity extends AppCompatActivity {
     public void logout(View view) {
         manager.setIsLogin(false);
         startActivity(new Intent(this, SignUpActivity.class));
-        overridePendingTransition(0, 0);
+        overridePendingTransition(0, 0); finish();
     }
 
     // Переход на URL yandexAPI

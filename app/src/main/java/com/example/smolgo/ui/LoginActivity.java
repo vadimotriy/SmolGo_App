@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.body().message.equals("Succes")) {
                     String name = response.body().name;
                     manager.setIsLogin(true); manager.setName(name);
-                    startActivity(mainScreen);
+                    startActivity(mainScreen); finish();
                 }
                 // Email еще не зарегестрирован
                 else if (response.body().message.equals("Email has not been used")) {
@@ -92,6 +92,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // Переход на страницу регистрации
     public void signUp(View view) {
-        finish();
+        Intent login = new Intent(this, SignUpActivity.class);
+        startActivity(login); finish();
     }
 }

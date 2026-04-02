@@ -168,7 +168,7 @@ public class WallWayActivity extends AppCompatActivity {
         // Если все башни пройдены, то переход на активнсоть финиша
         if (num == 17) {
             manager.setWall(0); manager.setWallStatus(2);
-            startActivity(new Intent(this, FinalActivity.class));
+            startActivity(new Intent(this, FinalActivity.class)); finish();
         } else {
             label.setText(labelsText[num]);
             where.setText(whereText[num]);

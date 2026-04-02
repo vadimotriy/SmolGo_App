@@ -134,8 +134,10 @@ public class Monument2QuestActivity extends AppCompatActivity {
         }
 
         // Если все памятники пройдены, то переход на активность финиша
-        if (num == 7) { manager.setMonument2(0); manager.setMonumentStatus2(2); startActivity(new Intent(this, FinalActivity.class)); }
-        else {
+        if (num == 7) {
+            manager.setMonument2(0); manager.setMonumentStatus2(2);
+            startActivity(new Intent(this, FinalActivity.class));  finish();
+        } else {
             label.setText(labelsText[num]);
             about.setText(aboutText[num]);
             question.setText(questionText[num]);

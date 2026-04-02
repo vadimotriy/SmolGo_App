@@ -31,6 +31,6 @@ public class FinalActivity extends AppCompatActivity {
     // Выход на главный экран
     public void toMainScreen(View view) {
         startActivity(new Intent(this, MainScreenActivity.class));
-        overridePendingTransition(0, 0);
+        overridePendingTransition(0, 0); finish();
     }
 }

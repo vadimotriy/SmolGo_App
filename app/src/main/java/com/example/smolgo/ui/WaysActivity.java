@@ -36,7 +36,7 @@ public class WaysActivity extends AppCompatActivity {
         // Если человек не зарегестрирован, мы переводим его на onboarding1
         if (!manager.getIsLogin()) {
             Intent activity = new Intent(this, OnBoarding1Activity.class);
-            startActivity(activity);
+            startActivity(activity); finish();
         }
 
         // Настройка BottomNavigationView
@@ -49,19 +49,19 @@ public class WaysActivity extends AppCompatActivity {
                 return true;
             } else if (id == R.id.navigation_home) {
                 startActivity(new Intent(this, MainScreenActivity.class));
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0); finish();
                 return true;
             } else if (id == R.id.navigation_quests) {
                 startActivity(new Intent(this, QuestsActivity.class));
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0); finish();
                 return true;
             } else if (id == R.id.navigation_achievmnets) {
                 startActivity(new Intent(this, AchievmetsActivity.class));
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0); finish();
                 return true;
             } else if (id == R.id.navigation_settings) {
                 startActivity(new Intent(this, QuestionsActivity.class));
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0); finish();
                 return true;
             }
             return false;

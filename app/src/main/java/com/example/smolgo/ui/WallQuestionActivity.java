@@ -106,7 +106,7 @@ public class WallQuestionActivity extends AppCompatActivity {
         // Если все вопросы пройдены, то переход на активность финиша
         if (num == 5) {
             manager.setWallQuestion(0); manager.setWallQuestionStatus(2);
-            startActivity(new Intent(this, FinalActivity.class));
+            startActivity(new Intent(this, FinalActivity.class)); finish();
         } else {
             manager.setWall(num);
             question.setText(questionsText[num]);

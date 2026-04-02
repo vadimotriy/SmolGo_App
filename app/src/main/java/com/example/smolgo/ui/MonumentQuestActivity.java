@@ -149,7 +149,7 @@ public class MonumentQuestActivity extends AppCompatActivity {
         // Если все памятники пройдены, то переход на активность финиша
         if (num == 5) {
             manager.setMonument(0); manager.setMonumentStatus(2);
-            startActivity(new Intent(this, FinalActivity.class));
+            startActivity(new Intent(this, FinalActivity.class)); finish();
         }
         else {
             label.setText(labelsText[num]);

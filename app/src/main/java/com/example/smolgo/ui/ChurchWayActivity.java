@@ -124,7 +124,7 @@ public class ChurchWayActivity extends AppCompatActivity {
         // Если все храмы пройдены, то переход на активнсоть финиша
         if (num == 8) {
             manager.setChurch(0); manager.setChurchStatus(2);
-            startActivity(new Intent(this, FinalActivity.class));
+            startActivity(new Intent(this, FinalActivity.class)); finish();
         } else {
             label.setText(labelsText[num]);
             where.setText(whereText[num]);

@@ -98,7 +98,7 @@ public class FoodWayActivity extends AppCompatActivity {
         // Если все заведения пройдены, то переход на активнсоть финиша
         if (num == 3) {
             manager.setFood(0); manager.setFoodStatus(2);
-            startActivity(new Intent(this, FinalActivity.class));
+            startActivity(new Intent(this, FinalActivity.class)); finish();
         } else {
             label.setText(labelsText[num]);
             where.setText(whereText[num]);

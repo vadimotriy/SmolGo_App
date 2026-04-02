@@ -74,7 +74,7 @@ public class SignUpActivity extends AppCompatActivity {
                 // Успешная регистрация
                 if (response.body().message.equals("Succes")) {
                     manager.setIsLogin(true); manager.setName(name);
-                    startActivity(mainScreen);
+                    startActivity(mainScreen); finish();
                 }
                 // Email уже занят
                 else {
@@ -93,6 +93,6 @@ public class SignUpActivity extends AppCompatActivity {
     // Переход на страницу входа
     public void login(View view) {
         Intent login = new Intent(this, LoginActivity.class);
-        startActivity(login);
+        startActivity(login); finish();
     }
 }
