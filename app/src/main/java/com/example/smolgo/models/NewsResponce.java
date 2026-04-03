@@ -1,5 +1,6 @@
 package com.example.smolgo.models;
 
+// Тело ответа новостей
 public class NewsResponce {
     public String message;
     public NewsItem news_1;

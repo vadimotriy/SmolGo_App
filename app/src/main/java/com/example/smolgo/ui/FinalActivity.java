@@ -12,9 +12,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.smolgo.R;
 
-// Активность для активонсти финиша
+// Активность финиша
 public class FinalActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

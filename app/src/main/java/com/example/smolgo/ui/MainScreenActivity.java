@@ -107,16 +107,15 @@ public class MainScreenActivity extends AppCompatActivity {
 
         ways.setText(Integer.toString(waysNum));
         quests.setText(Integer.toString(questsNum));
+        if (manager.getWallQuestionResult() == 5 && manager.getHistoryQuestionResult() == 5) {
+            achievments.setText("1");
+        }
 
         // При первом запуске приложения, сразу загружает новости
         if (!manager.getIsNews()) {
             loadNews(new View(this));
         } else {
             updateInformation();
-        }
-
-        if (manager.getWallQuestionResult() == 5 && manager.getHistoryQuestionResult() == 5) {
-            achievments.setText("1");
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -126,15 +125,12 @@ public class MainScreenActivity extends AppCompatActivity {
         });
     }
 
-    // Обновление bottom navigation
+    // Обновление bottom navigation и проверка на авторизацию
     @Override
     protected void onResume() {
         super.onResume();
 
-        if (!manager.getIsLogin()) {
-            finish();
-        }
-
+        if (!manager.getIsLogin()) { finish(); }
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
     }
 
@@ -146,6 +142,7 @@ public class MainScreenActivity extends AppCompatActivity {
         builder.create(Api.class).getNews().enqueue(new Callback<NewsResponce>() {
             @Override
             public void onResponse(Call<NewsResponce> call, Response<NewsResponce> response) {
+                // Сервер успешно отправил три актуальных новости
                 if ("Succes".equals(response.body().message)) {
                     NewsItem news1 = response.body().news_1;
                     NewsItem news2 = response.body().news_2;
@@ -171,11 +168,14 @@ public class MainScreenActivity extends AppCompatActivity {
                     updateInformation();
 
                     Toast.makeText(MainScreenActivity.this, "Обновлено!", LENGTH_SHORT).show();
-                } else {
+                }
+                // Произошла ошибка с БД на сервере
+                else {
                     Toast.makeText(MainScreenActivity.this, "Новости сейчас недоступны. Попробуйте позже!", LENGTH_SHORT).show();
                 }
             }
 
+            // Нет соединения с интернетом
             @Override
             public void onFailure(Call<NewsResponce> call, Throwable t) {
                 Log.e("SmolGo_getNews", t.toString());

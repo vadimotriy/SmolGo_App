@@ -38,7 +38,7 @@ public class ChurchWayActivity extends AppCompatActivity {
             "улица Тимирязева, 5",
             "улица Маршала Жукова, 24",
             "улица Конёнкова, 9",
-            "Большая Советская улица, 9",
+            "улица Большая Советская, 9",
             "улица Фурманова, 33А"
     };
 
@@ -83,7 +83,6 @@ public class ChurchWayActivity extends AppCompatActivity {
     TextView label, about, where;
     ImageView image;
     ScrollView scrollView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

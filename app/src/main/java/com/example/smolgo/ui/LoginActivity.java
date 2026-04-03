@@ -82,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
 
+            // Нет соединения с интернетом
             @Override
             public void onFailure(Call<LoginResponce> call, Throwable t) {
                 Log.e("SmolGo_Login", t.toString());

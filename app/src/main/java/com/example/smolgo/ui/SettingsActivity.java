@@ -29,6 +29,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         manager = SharedManager.getInstance(this);
 
+        // Если человек не зарегестрирован, мы переводим его на onboarding1
         if (!manager.getIsLogin()) {
             Intent activity = new Intent(this, OnBoarding1Activity.class);
             startActivity(activity); finish();

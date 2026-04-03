@@ -82,6 +82,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
 
+            // Нет соединения с интернетом
             @Override
             public void onFailure(Call<RegisterResponce> call, Throwable t) {
                 Log.e("SmolGo_SignUp", t.toString());

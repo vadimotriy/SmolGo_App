@@ -11,10 +11,12 @@ public class SharedManager {
     private static SharedManager manager;
     private String URL = "https://sun9-61.userapi.com/s/v1/ig2/4AMb_GxUlDBfcLHL7Owhq01RFKOFx6w4ZhupG8e1qGdUCdFGXJZLL37XjaSYl8iUipTSZmT_VrwZVxhBLkOW00zQ.jpg?quality=95&crop=0,0,1280,853&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853&from=bu&u=NPtitNTRi-5sRwPAYCC9sMR3fVd1_hCY1aCqbYu9BTY&cs=1280x0";
 
+    // Приватный конструктор класса
     private SharedManager(Context context) {
         prefs = context.getSharedPreferences("settings", MODE_PRIVATE);
     }
 
+    // Публичный конструктор класса
     public static SharedManager getInstance(Context context) {
         if (manager == null) {
             manager = new SharedManager(context);
@@ -96,7 +98,7 @@ public class SharedManager {
     public void setHistoryQuestionResult(int num) { prefs.edit().putInt("history_question_result", num).apply(); }
 
 
-    // 24 методов для хранения данных про викторину "Крепостная стена"
+    // 24 методов для хранения данных Новостей
     public String getTitle1() { return prefs.getString("title1", ""); }
     public String getTitle2() { return prefs.getString("title2", ""); }
     public String getTitle3() { return prefs.getString("title3", ""); }
