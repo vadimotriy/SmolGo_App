@@ -1,5 +1,6 @@
 package com.example.smolgo.ui;
 
+import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
@@ -95,7 +96,7 @@ public class AchievmetsActivity extends AppCompatActivity {
 
         if (manager.getWallQuestionResult() == 5 && manager.getHistoryQuestionResult() == 5) {
             layoutAllQuestions.setVisibility(VISIBLE);
-            layoutNoneQuestions.setVisibility(INVISIBLE);
+            layoutNoneQuestions.setVisibility(GONE);
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

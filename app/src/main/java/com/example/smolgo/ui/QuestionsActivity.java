@@ -73,7 +73,6 @@ public class QuestionsActivity extends AppCompatActivity {
             statusWall.setText("В процессе");
         }
 
-        // Выставление результатов викторин
         if (manager.getHistoryQuestionStatus() == 2) {
             statusHistory.setText(manager.getHistoryQuestionResult() + " / 5");
         } else if (manager.getHistoryQuestionStatus() == 1) {
@@ -93,10 +92,17 @@ public class QuestionsActivity extends AppCompatActivity {
         super.onResume();
         bottomNavigationView.setSelectedItemId(R.id.navigation_settings);
 
+        // Выставление результатов викторин
         if (manager.getWallQuestionStatus() == 2) {
             statusWall.setText(manager.getWallQuestionResult() + " / 5");
         } else if (manager.getWallQuestionStatus() == 1) {
             statusWall.setText("В процессе");
+        }
+
+        if (manager.getHistoryQuestionStatus() == 2) {
+            statusHistory.setText(manager.getHistoryQuestionResult() + " / 5");
+        } else if (manager.getHistoryQuestionStatus() == 1) {
+            statusHistory.setText("В процессе");
         }
     }
 

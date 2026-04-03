@@ -22,8 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class WaysActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
-
-    TextView statusChurch, statusWall;
+    TextView statusChurch, statusWall, statusFood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +87,16 @@ public class WaysActivity extends AppCompatActivity {
                 statusWall.setText("Пройдено");  break;
         }
 
+        statusFood = findViewById(R.id.status_food);
+        switch (manager.getFoodStatus()) {
+            case 0:
+                statusFood.setText("Не пройдено");  break;
+            case 1:
+                statusFood.setText("В процессе");  break;
+            case 2:
+                statusFood.setText("Пройдено");  break;
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0);
@@ -117,6 +126,16 @@ public class WaysActivity extends AppCompatActivity {
                 statusWall.setText("В процессе");  break;
             case 2:
                 statusWall.setText("Пройдено");  break;
+        }
+
+        statusFood = findViewById(R.id.status_food);
+        switch (manager.getFoodStatus()) {
+            case 0:
+                statusFood.setText("Не пройдено");  break;
+            case 1:
+                statusFood.setText("В процессе");  break;
+            case 2:
+                statusFood.setText("Пройдено");  break;
         }
     }
 
