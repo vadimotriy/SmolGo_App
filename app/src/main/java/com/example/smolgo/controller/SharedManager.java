@@ -38,6 +38,11 @@ public class SharedManager {
     public void setName(String name) { prefs.edit().putString("name", name).apply(); }
 
 
+    // 2 метода для хранения имя пользователя
+    public int getAchievments() { return prefs.getInt("achievments", 0); }
+    public void setAchievments(int num) { prefs.edit().putInt("achievments", num).apply(); }
+
+
     // 4 метода для хранения данных про квест "Памятники 2"
     public int getMonument2() { return prefs.getInt("monument2", 0); }
     public void setMonument2(int num) { prefs.edit().putInt("monument2", num).apply(); }
@@ -80,6 +85,15 @@ public class SharedManager {
     public void setWallQuestionStatus(int num) { prefs.edit().putInt("wall_question_status", num).apply(); }
     public int getWallQuestionResult() { return prefs.getInt("wall_question_result", 0); }
     public void setWallQuestionResult(int num) { prefs.edit().putInt("wall_question_result", num).apply(); }
+
+
+    // 6 методов для хранения данных про викторину "История Смоленска"
+    public int getHistoryQuestion() { return prefs.getInt("history_question", 0); }
+    public void setHistoryQuestion(int num) { prefs.edit().putInt("history_question", num).apply(); }
+    public int getHistoryQuestionStatus() { return prefs.getInt("history_question_status", 0); }
+    public void setHistoryQuestionStatus(int num) { prefs.edit().putInt("history_question_status", num).apply(); }
+    public int getHistoryQuestionResult() { return prefs.getInt("history_question_result", 0); }
+    public void setHistoryQuestionResult(int num) { prefs.edit().putInt("history_question_result", num).apply(); }
 
 
     // 24 методов для хранения данных про викторину "Крепостная стена"

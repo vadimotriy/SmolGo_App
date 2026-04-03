@@ -1,7 +1,11 @@
 package com.example.smolgo.ui;
 
+import static android.view.View.INVISIBLE;
+import static android.view.View.VISIBLE;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -22,6 +26,8 @@ public class AchievmetsActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ProgressBar barWays, barQuests;
     TextView numWays, numQuests;
+
+    LinearLayout layoutNoneQuestions, layoutAllQuestions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,22 +71,32 @@ public class AchievmetsActivity extends AppCompatActivity {
             return false;
         });
 
-//        int waysNum = (manager.getAngelStatus() == 2 ? 1 : 0) + (manager.getWallStatus() == 2 ? 1 : 0);
+        int waysNum = (manager.getWallStatus() == 2 ? 1 : 0) + (manager.getChurchStatus() == 2 ? 1 : 0)
+                + (manager.getFoodStatus() == 2 ? 1 : 0);
         int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0) + (manager.getMonumentStatus2() == 2 ? 1 : 0);
 
         // Заполнение PorgresBar
         barWays = findViewById(R.id.progressBarWays);
-//        barWays.setProgress(waysNum);
+        barWays.setProgress(waysNum);
 
         barQuests = findViewById(R.id.progressBarQuests);
         barQuests.setProgress(questsNum);
 
         // Заполнение количества пройденных маршрутов/квестов
         numWays = findViewById(R.id.ways_number);
-//        numWays.setText(Integer.toString(waysNum));
+        numWays.setText(Integer.toString(waysNum));
 
         numQuests = findViewById(R.id.quests_number);
         numQuests.setText(Integer.toString(questsNum));
+
+        // Заполнение достижений
+        layoutAllQuestions = findViewById(R.id.allQuestions);
+        layoutNoneQuestions = findViewById(R.id.noneQuestions);
+
+        if (manager.getWallQuestionResult() == 5 && manager.getHistoryQuestionResult() == 5) {
+            layoutAllQuestions.setVisibility(VISIBLE);
+            layoutNoneQuestions.setVisibility(INVISIBLE);
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

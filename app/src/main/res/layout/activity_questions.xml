@@ -83,6 +83,67 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="120dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.45"
+                android:background="@drawable/shape_card"
+
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="historyQuestions">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="left"
+                    android:text="@string/history"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="24dp"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="32sp"
+                    android:drawablePadding="15dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="left"
+                        android:text="@string/result"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="24dp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/status_history"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="right"
+                        android:text="Не пройдено"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="24dp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="20sp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

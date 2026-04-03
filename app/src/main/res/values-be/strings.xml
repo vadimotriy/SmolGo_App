@@ -39,4 +39,14 @@
     <string name="smolenks_churchs">Храмы Смоленска</string>
     <string name="restoraunts">Заведений:</string>
     <string name="food">Гастрономический маршрут</string>
+    <string name="food1">Гастрономический</string>
+    <string name="questions">Викторины</string>
+    <string name="result">Результат:</string>
+    <string name="answer">Ответить</string>
+    <string name="yandex">Условия использования отдельных сервисов Яндекс Карт</string>
+    <string name="vk">Подписаться в ВК</string>
+    <string name="title_news">Загрузка</string>
+    <string name="text_news">Пока новости загружаются, советуем вам подписаться на наше сообщество в ВК, где вы сможете узнавать все самые важные новости нашего грода самыми первыми!</string>
+    <string name="history">История смоленска</string>
+    <string name="statistics">Ваша статистика:</string>
 </resources>

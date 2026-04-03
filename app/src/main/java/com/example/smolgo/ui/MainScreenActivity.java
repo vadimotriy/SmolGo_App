@@ -101,18 +101,22 @@ public class MainScreenActivity extends AppCompatActivity {
         quests = findViewById(R.id.quests_number);
         achievments = findViewById(R.id.achievments_number);
 
-//        int waysNum = (manager.getAngelStatus() == 2 ? 1 : 0) + (manager.getWallStatus() == 2 ? 1 : 0);
-        int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0);
+        int waysNum = (manager.getWallStatus() == 2 ? 1 : 0) + (manager.getChurchStatus() == 2 ? 1 : 0)
+                + (manager.getFoodStatus() == 2 ? 1 : 0);
+        int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0) + (manager.getMonumentStatus2() == 2 ? 1 : 0);
 
-//        ways.setText(Integer.toString(waysNum));
+        ways.setText(Integer.toString(waysNum));
         quests.setText(Integer.toString(questsNum));
-        achievments.setText("0");
 
         // При первом запуске приложения, сразу загружает новости
         if (!manager.getIsNews()) {
             loadNews(new View(this));
         } else {
             updateInformation();
+        }
+
+        if (manager.getWallQuestionResult() == 5 && manager.getHistoryQuestionResult() == 5) {
+            achievments.setText("1");
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -126,6 +130,11 @@ public class MainScreenActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        if (!manager.getIsLogin()) {
+            finish();
+        }
+
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
     }
 
@@ -186,7 +195,7 @@ public class MainScreenActivity extends AppCompatActivity {
     // Открытие настроек
     public void openSettings(View view) {
         startActivity(new Intent(this, SettingsActivity.class));
-        overridePendingTransition(0, 0); finish();
+        overridePendingTransition(0, 0);
     }
 
     // Обновление информации новостей

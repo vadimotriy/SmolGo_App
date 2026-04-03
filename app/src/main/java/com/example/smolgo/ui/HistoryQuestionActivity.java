@@ -3,12 +3,10 @@ package com.example.smolgo.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,33 +17,33 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.smolgo.R;
 import com.example.smolgo.controller.SharedManager;
 
-// Активность с викториной "Крепостная стена"
-public class WallQuestionActivity extends AppCompatActivity {
+// Активность с викториной "История Смоленска"
+public class HistoryQuestionActivity extends AppCompatActivity {
     // Массив с вопросами
     String[] questionsText = {
-            "Сколько башен было изначально в Крепостной стене?",
-            "Сколько оригинальных башен дошло до наших времен?",
-            "В каком году началось строительство Крепостной стены?",
-            "Какой император приказал укрепить Крепостную стену?",
-            "Какая из башен названа в честь монастыря, находящегося радом с ней?"
+            "В каком году было первое упоминание Смоленска?",
+            "Когда отмечается день города Смоленска?",
+            "Кто был архитектором Крепостной стены?",
+            "Сколько длилась оборона Смоленска от войск польского короля Сигизмунда III?",
+            "Какая птица изображена на гербе Смоленска?"
     };
 
     // Массив с вариантами ответов
     String[][] answersVariants = {
-            {"38", "17", "67", "26"},
-            {"17", "13", "14", "11"},
-            {"1592", "1602", "1595", "1600"},
-            {"Пётр I", "Екатерина I", "Петр III", "Павел I"},
-            {"Башня Зимбулка", "Башня Авраамиевские ворота", "Башня Костыревская (Красная)", "Башня Донец"}
+            {"982", "863", "862", "1012"},
+            {"25 сентября", "12 октября", "29 сентября", "9 июня"},
+            {"Юрий Фельтен", "Григорий Потемкин", "Михаил Шейн", "Федр Конь"},
+            {"3 месяца", "12 месяцев", "16 месяцев", "20 месяцев"},
+            {"Феникс", "Орел", "Гамаюн", "Воробей"}
     };
 
     // Массив с правильными ответами
     int[] answerRight = {
+            R.id.variant2,
             R.id.variant1,
-            R.id.variant3,
-            R.id.variant3,
-            R.id.variant1,
-            R.id.variant2
+            R.id.variant4,
+            R.id.variant4,
+            R.id.variant3
     };
 
     int num;
@@ -59,10 +57,10 @@ public class WallQuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_wall_question);
+        setContentView(R.layout.activity_history_question);
 
         manager = SharedManager.getInstance(this);
-        num = manager.getWallQuestion();
+        num = manager.getHistoryQuestion();
 
         scrollView = findViewById(R.id.scrollView);
         question = findViewById(R.id.question);
@@ -79,7 +77,7 @@ public class WallQuestionActivity extends AppCompatActivity {
         btn4.setText(answersVariants[num][3]);
 
         if (num == 0) {
-            manager.setWallQuestionResult(0);
+            manager.setHistoryQuestionResult(0);
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -99,16 +97,16 @@ public class WallQuestionActivity extends AppCompatActivity {
         int selectedBtn = radioGroup.getCheckedRadioButtonId();
 
         if (selectedBtn == answerRight[num]) {
-            manager.setWallQuestionResult(manager.getWallQuestionResult() + 1);
+            manager.setHistoryQuestionResult(manager.getHistoryQuestionResult() + 1);
         }
         if (selectedBtn != -1) { ++num; }
 
         // Если все вопросы пройдены, то переход на активность финиша
         if (num == 5) {
-            manager.setWallQuestion(0); manager.setWallQuestionStatus(2);
+            manager.setHistoryQuestion(0); manager.setHistoryQuestionStatus(2);
             startActivity(new Intent(this, FinalActivity.class)); finish();
         } else {
-            manager.setWallQuestion(num);
+            manager.setHistoryQuestion(num);
             question.setText(questionsText[num]);
             btn1.setText(answersVariants[num][0]);
             btn2.setText(answersVariants[num][1]);
