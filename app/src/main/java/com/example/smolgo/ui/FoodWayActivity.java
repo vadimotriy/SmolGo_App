@@ -20,23 +20,23 @@ import com.example.smolgo.controller.SharedManager;
 public class FoodWayActivity extends AppCompatActivity {
     // Массив с названиями заведений
     String[] labelsText = {
-            "РУССКИЙ ДВОР",
-            "Кофебук",
-            "Лопатинский Сад"
+            String.valueOf(R.string.way_food_label_0),
+            String.valueOf(R.string.way_food_label_1),
+            String.valueOf(R.string.way_food_label_2)
     };
 
     // Массив с местоположением заведений
     String[] whereText = {
-            "улица Октябрьской Революции, 1Б",
-            "улица Октябрьской Революции, 6",
-            "улица Дзержинского, 18Б"
+            String.valueOf(R.string.way_food_where_0),
+            String.valueOf(R.string.way_food_where_1),
+            String.valueOf(R.string.way_food_where_2)
     };
 
     // Массив с описанием заведений
     String[] aboutText = {
-            "Кафе «Русский двор» в Смоленске — уголок традиционного гостеприимства, где бережно сохраняют и развивают смоленскую кухню. Здесь подают по-настоящему домашние блюда: румяные блины, сытные пельмени и наваристые супы. Уютный интерьер в старорусском стиле создает особую атмосферу, идеальную для семейных обедов и встреч с друзьями. Доступные цены и качественный сервис делают это место одним из самых популярных в городе.",
-            "Кофейня «Кофебук» — это уютное заведение в историческом центре Смоленска, где можно насладиться ароматным кофе и вкусными десертами. Интерьер кофейни выполнен в спокойных тонах с приглушенным светом и ненавязчивой музыкой, что создает приятную атмосферу для отдыха.",
-            "Кафе «Лопатинский Сад» — это идеальное место в самом сердце Смоленска, где вы сможете провести время в теплой, уютной атмосфере. Заведение предлагает гостям насладиться изысканными блюдами, качественным обслуживанием и приятной живой музыкой, создающей незабываемое настроение для отдыха с друзьями, семьей или романтического вечера."
+            String.valueOf(R.string.way_food_about_0),
+            String.valueOf(R.string.way_food_about_1),
+            String.valueOf(R.string.way_food_about_2)
     };
 
     // Массив с кординатами заведений
@@ -115,7 +115,7 @@ public class FoodWayActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MapActivity.class);
         intent.putExtra("cord_first", cords[num][0]);
         intent.putExtra("cord_second", cords[num][1]);
-        intent.putExtra("title", "Гастрономический");
+        intent.putExtra("title", String.valueOf(R.string.gastronom));
         intent.putExtra("object", labelsText[num]);
         startActivity(intent);
     }
