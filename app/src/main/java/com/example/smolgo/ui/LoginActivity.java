@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = passwordInput.getText().toString();
         LoginRequest request = new LoginRequest(email, password);
 
-        Retrofit builder = new Retrofit.Builder().baseUrl("https://web-production-2e91f.up.railway.app/")
+        Retrofit builder = new Retrofit.Builder().baseUrl("http://82.23.249.75/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         builder.create(Api.class).login(request).enqueue(new Callback<LoginResponce>() {

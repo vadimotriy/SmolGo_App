@@ -65,7 +65,7 @@ public class SignUpActivity extends AppCompatActivity {
         String password = passwordInput.getText().toString();
         RegisterRequest request = new RegisterRequest(name, email, password);
 
-        Retrofit builder = new Retrofit.Builder().baseUrl("https://web-production-2e91f.up.railway.app/")
+        Retrofit builder = new Retrofit.Builder().baseUrl("http://82.23.249.75/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         builder.create(Api.class).signUp(request).enqueue(new Callback<RegisterResponce>() {
