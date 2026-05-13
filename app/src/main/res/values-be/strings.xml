@@ -205,4 +205,18 @@
     <string name="quest_monument2_question_4">Сколько человек из Смоленской области было угнано в немецко-фашистское рабство?</string>
     <string name="quest_monument2_question_5">Вставьте пропуск «НЕСГИБАЕМЫЙ ДУХ ВСЁ ...»</string>
     <string name="quest_monument2_question_6">Какая фамилия у скульптора?</string>
+
+
+
+    <string name="question_wall_questions_0">Сколько башен было изначально в Крепостной стене?</string>
+    <string name="question_wall_questions_1">Сколько оригинальных башен дошло до наших времен?</string>
+    <string name="question_wall_questions_2">В каком году началось строительство Крепостной стены?</string>
+    <string name="question_wall_questions_3">Какой император приказал укрепить Крепостную стену?</string>
+    <string name="question_wall_questions_4">Какая из башен названа в честь монастыря, находящегося радом с ней?</string>
+
+    <string name="question_history_questions_0">В каком году было первое упоминание Смоленска?</string>
+    <string name="question_history_questions_1">Когда отмечается день города Смоленска?</string>
+    <string name="question_history_questions_2">Кто был архитектором Крепостной стены?</string>
+    <string name="question_history_questions_3">Сколько длилась оборона Смоленска от войск польского короля Сигизмунда III?</string>
+    <string name="question_history_questions_4">Какая птица изображена на гербе Смоленска?</string>
 </resources>
