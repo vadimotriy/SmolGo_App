@@ -167,11 +167,11 @@ public class MainScreenActivity extends AppCompatActivity {
                     manager.setIsNews(true);
                     updateInformation();
 
-                    Toast.makeText(MainScreenActivity.this, "Обновлено!", LENGTH_SHORT).show();
+                    Toast.makeText(MainScreenActivity.this, String.valueOf(R.string.updated), LENGTH_SHORT).show();
                 }
                 // Произошла ошибка с БД на сервере
                 else {
-                    Toast.makeText(MainScreenActivity.this, "Новости сейчас недоступны. Попробуйте позже!", LENGTH_SHORT).show();
+                    Toast.makeText(MainScreenActivity.this, String.valueOf(R.string.bd_error), LENGTH_SHORT).show();
                 }
             }
 
@@ -179,7 +179,7 @@ public class MainScreenActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<NewsResponce> call, Throwable t) {
                 Log.e("SmolGo_getNews", t.toString());
-                Toast.makeText(MainScreenActivity.this, "Нет соединения с сервером. Проверьте наличия интернета", LENGTH_SHORT).show();
+                Toast.makeText(MainScreenActivity.this, String.valueOf(R.string.network_error), LENGTH_SHORT).show();
             }
         });
     }

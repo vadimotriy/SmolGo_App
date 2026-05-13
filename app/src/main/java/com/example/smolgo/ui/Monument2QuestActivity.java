@@ -129,7 +129,7 @@ public class Monument2QuestActivity extends AppCompatActivity {
         if (userAnswer.toLowerCase().equals(answersText[num])) {
             ++num;
         } else {
-            Toast.makeText(this, "Не правильно!", LENGTH_SHORT).show();
+            Toast.makeText(this, String.valueOf(R.string.not_correct), LENGTH_SHORT).show();
             return;
         }
 

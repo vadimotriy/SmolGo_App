@@ -78,7 +78,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
                 // Email уже занят
                 else {
-                    Toast.makeText(SignUpActivity.this, "Email уже используется", LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, String.valueOf(R.string.email_used_error), LENGTH_SHORT).show();
                 }
             }
 
@@ -86,7 +86,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<RegisterResponce> call, Throwable t) {
                 Log.e("SmolGo_SignUp", t.toString());
-                Toast.makeText(SignUpActivity.this, "Нет соединения с сервером. Проверьте наличия интернета", LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, String.valueOf(R.string.network_error), LENGTH_SHORT).show();
             }
         });
     }

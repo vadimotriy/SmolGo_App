@@ -54,7 +54,6 @@
 
 
 
-
     <string name="way_church_labels_0">Смоленский Свято-Успенский кафедральный собор</string>
     <string name="way_church_labels_1">Богоявленский собор</string>
     <string name="way_church_labels_2">Одигитриевская надвратная церковь (Днепровские ворота)</string>
@@ -219,4 +218,15 @@
     <string name="question_history_questions_2">Кто был архитектором Крепостной стены?</string>
     <string name="question_history_questions_3">Сколько длилась оборона Смоленска от войск польского короля Сигизмунда III?</string>
     <string name="question_history_questions_4">Какая птица изображена на гербе Смоленска?</string>
+
+    <string name="network_error">Нет соединения с сервером. Проверьте наличия интернета</string>
+    <string name="password_error">Неверный пароль</string>
+    <string name="email_error">Email не зарегестрирован</string>
+    <string name="email_used_error">Email уже используется</string>
+    <string name="bd_error">Новости сейчас недоступны. Попробуйте позже!</string>
+    <string name="updated">Обновлено!</string>
+    <string name="not_correct">Не правильно!</string>
+    <string name="in_process">В процессе</string>
+    <string name="completed">Пройдено</string>
+    <string name="un_completed">Не пройдено</string>
 </resources>

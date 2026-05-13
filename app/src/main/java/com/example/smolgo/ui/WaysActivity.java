@@ -70,31 +70,31 @@ public class WaysActivity extends AppCompatActivity {
         statusChurch = findViewById(R.id.status_church);
         switch (manager.getChurchStatus()) {
             case 0:
-                statusChurch.setText("Не пройдено");  break;
+                statusChurch.setText(String.valueOf(R.string.un_completed));  break;
             case 1:
-                statusChurch.setText("В процессе");  break;
+                statusChurch.setText(String.valueOf(R.string.in_process));  break;
             case 2:
-                statusChurch.setText("Пройдено");  break;
+                statusChurch.setText(String.valueOf(R.string.completed));  break;
         }
 
         statusWall = findViewById(R.id.status_wall);
         switch (manager.getWallStatus()) {
             case 0:
-                statusWall.setText("Не пройдено");  break;
+                statusWall.setText(String.valueOf(R.string.un_completed));  break;
             case 1:
-                statusWall.setText("В процессе");  break;
+                statusWall.setText(String.valueOf(R.string.in_process));  break;
             case 2:
-                statusWall.setText("Пройдено");  break;
+                statusWall.setText(String.valueOf(R.string.completed));  break;
         }
 
         statusFood = findViewById(R.id.status_food);
         switch (manager.getFoodStatus()) {
             case 0:
-                statusFood.setText("Не пройдено");  break;
+                statusFood.setText(String.valueOf(R.string.un_completed));  break;
             case 1:
-                statusFood.setText("В процессе");  break;
+                statusFood.setText(String.valueOf(R.string.in_process));  break;
             case 2:
-                statusFood.setText("Пройдено");  break;
+                statusFood.setText(String.valueOf(R.string.completed));  break;
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -112,30 +112,30 @@ public class WaysActivity extends AppCompatActivity {
 
         switch (manager.getChurchStatus()) {
             case 0:
-                statusChurch.setText("Не пройдено");  break;
+                statusChurch.setText(String.valueOf(R.string.un_completed));  break;
             case 1:
-                statusChurch.setText("В процессе");  break;
+                statusChurch.setText(String.valueOf(R.string.in_process));  break;
             case 2:
-                statusChurch.setText("Пройдено");  break;
+                statusChurch.setText(String.valueOf(R.string.completed));  break;
         }
 
         switch (manager.getWallStatus()) {
             case 0:
-                statusWall.setText("Не пройдено");  break;
+                statusWall.setText(String.valueOf(R.string.un_completed));  break;
             case 1:
-                statusWall.setText("В процессе");  break;
+                statusWall.setText(String.valueOf(R.string.in_process));  break;
             case 2:
-                statusWall.setText("Пройдено");  break;
+                statusWall.setText(String.valueOf(R.string.completed));  break;
         }
 
         statusFood = findViewById(R.id.status_food);
         switch (manager.getFoodStatus()) {
             case 0:
-                statusFood.setText("Не пройдено");  break;
+                statusFood.setText(String.valueOf(R.string.un_completed));  break;
             case 1:
-                statusFood.setText("В процессе");  break;
+                statusFood.setText(String.valueOf(R.string.in_process));  break;
             case 2:
-                statusFood.setText("Пройдено");  break;
+                statusFood.setText(String.valueOf(R.string.completed));  break;
         }
     }
 

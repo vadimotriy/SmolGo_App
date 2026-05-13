@@ -74,11 +74,11 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 // Email еще не зарегестрирован
                 else if (response.body().message.equals("Email has not been used")) {
-                    Toast.makeText(LoginActivity.this, "Email не зарегестрирован", LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, String.valueOf(R.string.email_error), LENGTH_SHORT).show();
                 }
                 // Неверный пароль
                 else {
-                    Toast.makeText(LoginActivity.this, "Неверный пароль", LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, String.valueOf(R.string.password_error), LENGTH_SHORT).show();
                 }
             }
 
@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<LoginResponce> call, Throwable t) {
                 Log.e("SmolGo_Login", t.toString());
-                Toast.makeText(LoginActivity.this, "Нет соединения с сервером. Проверьте наличия интернета", LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, String.valueOf(R.string.network_error), LENGTH_SHORT).show();
             }
         });
     }
