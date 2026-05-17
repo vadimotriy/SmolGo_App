@@ -21,11 +21,11 @@ import com.example.smolgo.controller.SharedManager;
 public class HistoryQuestionActivity extends AppCompatActivity {
     // Массив с вопросами
     String[] questionsText = {
-            "В каком году было первое упоминание Смоленска?",
-            "Когда отмечается день города Смоленска?",
-            "Кто был архитектором Крепостной стены?",
-            "Сколько длилась оборона Смоленска от войск польского короля Сигизмунда III?",
-            "Какая птица изображена на гербе Смоленска?"
+            String.valueOf(R.string.question_history_questions_0),
+            String.valueOf(R.string.question_history_questions_1),
+            String.valueOf(R.string.question_history_questions_2),
+            String.valueOf(R.string.question_history_questions_3),
+            String.valueOf(R.string.question_history_questions_4)
     };
 
     // Массив с вариантами ответов

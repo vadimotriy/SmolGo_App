@@ -67,21 +67,21 @@ public class QuestsActivity extends AppCompatActivity {
         statusMonument = findViewById(R.id.status_monument);
         switch (manager.getMonumentStatus()) {
             case 0:
-                statusMonument.setText("Не пройдено");  break;
+                statusMonument.setText(String.valueOf(R.string.un_completed));  break;
             case 1:
-                statusMonument.setText("В процессе");  break;
+                statusMonument.setText(String.valueOf(R.string.in_process));  break;
             case 2:
-                statusMonument.setText("Пройдено");  break;
+                statusMonument.setText(String.valueOf(R.string.completed));  break;
         }
 
         statusMonument2 = findViewById(R.id.status_monument_2);
         switch (manager.getMonumentStatus2()) {
             case 0:
-                statusMonument2.setText("Не пройдено");  break;
+                statusMonument2.setText(String.valueOf(R.string.un_completed));  break;
             case 1:
-                statusMonument2.setText("В процессе");  break;
+                statusMonument2.setText(String.valueOf(R.string.in_process));  break;
             case 2:
-                statusMonument2.setText("Пройдено");  break;
+                statusMonument2.setText(String.valueOf(R.string.completed));  break;
         }
 
 
@@ -100,20 +100,20 @@ public class QuestsActivity extends AppCompatActivity {
 
         switch (manager.getMonumentStatus()) {
             case 0:
-                statusMonument.setText("Не пройдено");  break;
+                statusMonument.setText(String.valueOf(R.string.un_completed));  break;
             case 1:
-                statusMonument.setText("В процессе");  break;
+                statusMonument.setText(String.valueOf(R.string.in_process));  break;
             case 2:
-                statusMonument.setText("Пройдено");  break;
+                statusMonument.setText(String.valueOf(R.string.completed));  break;
         }
 
         switch (manager.getMonumentStatus2()) {
             case 0:
-                statusMonument2.setText("Не пройдено");  break;
+                statusMonument2.setText(String.valueOf(R.string.un_completed));  break;
             case 1:
-                statusMonument2.setText("В процессе");  break;
+                statusMonument2.setText(String.valueOf(R.string.in_process));  break;
             case 2:
-                statusMonument2.setText("Пройдено");  break;
+                statusMonument2.setText(String.valueOf(R.string.completed));  break;
         }
     }
 

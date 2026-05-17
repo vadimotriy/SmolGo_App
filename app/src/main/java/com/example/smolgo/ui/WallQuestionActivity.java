@@ -23,11 +23,11 @@ import com.example.smolgo.controller.SharedManager;
 public class WallQuestionActivity extends AppCompatActivity {
     // Массив с вопросами
     String[] questionsText = {
-            "Сколько башен было изначально в Крепостной стене?",
-            "Сколько оригинальных башен дошло до наших времен?",
-            "В каком году началось строительство Крепостной стены?",
-            "Какой император приказал укрепить Крепостную стену?",
-            "Какая из башен названа в честь монастыря, находящегося радом с ней?"
+            String.valueOf(R.string.question_wall_questions_0),
+            String.valueOf(R.string.question_wall_questions_1),
+            String.valueOf(R.string.question_wall_questions_2),
+            String.valueOf(R.string.question_wall_questions_3),
+            String.valueOf(R.string.question_wall_questions_4)
     };
 
     // Массив с вариантами ответов
