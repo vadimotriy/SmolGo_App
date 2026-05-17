@@ -23,48 +23,48 @@ import com.google.android.material.textfield.TextInputEditText;
 // Активность с квестом "Памятники"
 public class MonumentQuestActivity extends AppCompatActivity {
     // Массив с названиями памятников
-    String[] labelsText = {
-            String.valueOf(R.string.quest_monument_label_0),
-            String.valueOf(R.string.quest_monument_label_1),
-            String.valueOf(R.string.quest_monument_label_2),
-            String.valueOf(R.string.quest_monument_label_3),
-            String.valueOf(R.string.quest_monument_label_4)
+    int[] labelsText = {
+            R.string.quest_monument_label_0,
+            R.string.quest_monument_label_1,
+            R.string.quest_monument_label_2,
+            R.string.quest_monument_label_3,
+            R.string.quest_monument_label_4
     };
 
     // Массив с примерным место положением памятников
-    String[] whereText = {
-            String.valueOf(R.string.quest_monument_where_0),
-            String.valueOf(R.string.quest_monument_where_1),
-            String.valueOf(R.string.quest_monument_where_2),
-            String.valueOf(R.string.quest_monument_where_3),
-            String.valueOf(R.string.quest_monument_where_4)
+    int[] whereText = {
+            R.string.quest_monument_where_0,
+            R.string.quest_monument_where_1,
+            R.string.quest_monument_where_2,
+            R.string.quest_monument_where_3,
+            R.string.quest_monument_where_4
     };
 
     // Массив с обозначением мест для карты
-    String[] objectNameText = {
-            String.valueOf(R.string.quest_monument_name_object_0),
-            String.valueOf(R.string.quest_monument_name_object_1),
-            String.valueOf(R.string.quest_monument_name_object_2),
-            String.valueOf(R.string.quest_monument_name_object_3),
-            String.valueOf(R.string.quest_monument_name_object_4)
+    int[] objectNameText = {
+            R.string.quest_monument_name_object_0,
+            R.string.quest_monument_name_object_1,
+            R.string.quest_monument_name_object_2,
+            R.string.quest_monument_name_object_3,
+            R.string.quest_monument_name_object_4
     };
 
     // Массив с описанием памятников
-    String[] aboutText = {
-            String.valueOf(R.string.quest_monument_about_0),
-            String.valueOf(R.string.quest_monument_about_1),
-            String.valueOf(R.string.quest_monument_about_2),
-            String.valueOf(R.string.quest_monument_about_3),
-            String.valueOf(R.string.quest_monument_about_4)
+    int[] aboutText = {
+            R.string.quest_monument_about_0,
+            R.string.quest_monument_about_1,
+            R.string.quest_monument_about_2,
+            R.string.quest_monument_about_3,
+            R.string.quest_monument_about_4
     };
 
     // Массив с вопросами
-    String[] questionText = {
-            String.valueOf(R.string.quest_monument_question_0),
-            String.valueOf(R.string.quest_monument_question_1),
-            String.valueOf(R.string.quest_monument_question_2),
-            String.valueOf(R.string.quest_monument_question_3),
-            String.valueOf(R.string.quest_monument_question_4)
+    int[] questionText = {
+            R.string.quest_monument_question_0,
+            R.string.quest_monument_question_1,
+            R.string.quest_monument_question_2,
+            R.string.quest_monument_question_3,
+            R.string.quest_monument_question_4
     };
 
     // Массив с ответами
@@ -143,7 +143,7 @@ public class MonumentQuestActivity extends AppCompatActivity {
         if (userAnswer.toLowerCase().equals(answersText[num])) {
             ++num;
         } else {
-            Toast.makeText(this, String.valueOf(R.string.not_correct), LENGTH_SHORT).show(); return;
+            Toast.makeText(this, R.string.not_correct, LENGTH_SHORT).show(); return;
         }
 
         // Если все памятники пройдены, то переход на активность финиша

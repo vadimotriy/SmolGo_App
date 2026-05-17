@@ -24,36 +24,36 @@ import com.google.android.material.textfield.TextInputEditText;
 // Активность с квестом "Памятники 2"
 public class Monument2QuestActivity extends AppCompatActivity {
     // Массив с названиями памятников
-    String[] labelsText = {
-            String.valueOf(R.string.quest_monument2_label_0),
-            String.valueOf(R.string.quest_monument2_label_1),
-            String.valueOf(R.string.quest_monument2_label_2),
-            String.valueOf(R.string.quest_monument2_label_3),
-            String.valueOf(R.string.quest_monument2_label_4),
-            String.valueOf(R.string.quest_monument2_label_5),
-            String.valueOf(R.string.quest_monument2_label_6)
+    int[] labelsText = {
+            R.string.quest_monument2_label_0,
+            R.string.quest_monument2_label_1,
+            R.string.quest_monument2_label_2,
+            R.string.quest_monument2_label_3,
+            R.string.quest_monument2_label_4,
+            R.string.quest_monument2_label_5,
+            R.string.quest_monument2_label_6
     };
 
     // Массив с описанием памятников
-    String[] aboutText = {
-            String.valueOf(R.string.quest_monument2_about_0),
-            String.valueOf(R.string.quest_monument2_about_1),
-            String.valueOf(R.string.quest_monument2_about_2),
-            String.valueOf(R.string.quest_monument2_about_3),
-            String.valueOf(R.string.quest_monument2_about_4),
-            String.valueOf(R.string.quest_monument2_about_5),
-            String.valueOf(R.string.quest_monument2_about_6)
+    int[] aboutText = {
+            R.string.quest_monument2_about_0,
+            R.string.quest_monument2_about_1,
+            R.string.quest_monument2_about_2,
+            R.string.quest_monument2_about_3,
+            R.string.quest_monument2_about_4,
+            R.string.quest_monument2_about_5,
+            R.string.quest_monument2_about_6
     };
 
     // Массив с вопросами
-    String[] questionText = {
-            String.valueOf(R.string.quest_monument2_question_0),
-            String.valueOf(R.string.quest_monument2_question_1),
-            String.valueOf(R.string.quest_monument2_question_2),
-            String.valueOf(R.string.quest_monument2_question_3),
-            String.valueOf(R.string.quest_monument2_question_4),
-            String.valueOf(R.string.quest_monument2_question_5),
-            String.valueOf(R.string.quest_monument2_question_6)
+    int[] questionText = {
+            R.string.quest_monument2_question_0,
+            R.string.quest_monument2_question_1,
+            R.string.quest_monument2_question_2,
+            R.string.quest_monument2_question_3,
+            R.string.quest_monument2_question_4,
+            R.string.quest_monument2_question_5,
+            R.string.quest_monument2_question_6
     };
 
     // Массив с ответами
@@ -129,7 +129,7 @@ public class Monument2QuestActivity extends AppCompatActivity {
         if (userAnswer.toLowerCase().equals(answersText[num])) {
             ++num;
         } else {
-            Toast.makeText(this, String.valueOf(R.string.not_correct), LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.not_correct, LENGTH_SHORT).show();
             return;
         }
 

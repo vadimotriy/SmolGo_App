@@ -70,13 +70,13 @@ public class QuestionsActivity extends AppCompatActivity {
         if (manager.getWallQuestionStatus() == 2) {
             statusWall.setText(manager.getWallQuestionResult() + " / 5");
         } else if (manager.getWallQuestionStatus() == 1) {
-            statusWall.setText(String.valueOf(R.string.in_process));
+            statusWall.setText(R.string.in_process);
         }
 
         if (manager.getHistoryQuestionStatus() == 2) {
             statusHistory.setText(manager.getHistoryQuestionResult() + " / 5");
         } else if (manager.getHistoryQuestionStatus() == 1) {
-            statusHistory.setText(String.valueOf(R.string.in_process));
+            statusHistory.setText(R.string.in_process);
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -96,13 +96,13 @@ public class QuestionsActivity extends AppCompatActivity {
         if (manager.getWallQuestionStatus() == 2) {
             statusWall.setText(manager.getWallQuestionResult() + " / 5");
         } else if (manager.getWallQuestionStatus() == 1) {
-            statusWall.setText(String.valueOf(R.string.in_process));
+            statusWall.setText(R.string.in_process);
         }
 
         if (manager.getHistoryQuestionStatus() == 2) {
             statusHistory.setText(manager.getHistoryQuestionResult() + " / 5");
         } else if (manager.getHistoryQuestionStatus() == 1) {
-            statusHistory.setText(String.valueOf(R.string.in_process));
+            statusHistory.setText(R.string.in_process);
         }
     }
 

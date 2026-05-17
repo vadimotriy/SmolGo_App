@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = passwordInput.getText().toString();
         LoginRequest request = new LoginRequest(email, password);
 
-        Retrofit builder = new Retrofit.Builder().baseUrl("http://82.23.249.75/")
+        Retrofit builder = new Retrofit.Builder().baseUrl("http://148.253.213.59/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         builder.create(Api.class).login(request).enqueue(new Callback<LoginResponce>() {
@@ -74,11 +74,11 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 // Email еще не зарегестрирован
                 else if (response.body().message.equals("Email has not been used")) {
-                    Toast.makeText(LoginActivity.this, String.valueOf(R.string.email_error), LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, R.string.email_error, LENGTH_SHORT).show();
                 }
                 // Неверный пароль
                 else {
-                    Toast.makeText(LoginActivity.this, String.valueOf(R.string.password_error), LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, R.string.password_error, LENGTH_SHORT).show();
                 }
             }
 
@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<LoginResponce> call, Throwable t) {
                 Log.e("SmolGo_Login", t.toString());
-                Toast.makeText(LoginActivity.this, String.valueOf(R.string.network_error), LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, R.string.network_error, LENGTH_SHORT).show();
             }
         });
     }

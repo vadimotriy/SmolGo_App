@@ -70,31 +70,31 @@ public class WaysActivity extends AppCompatActivity {
         statusChurch = findViewById(R.id.status_church);
         switch (manager.getChurchStatus()) {
             case 0:
-                statusChurch.setText(String.valueOf(R.string.un_completed));  break;
+                statusChurch.setText(R.string.un_completed);  break;
             case 1:
-                statusChurch.setText(String.valueOf(R.string.in_process));  break;
+                statusChurch.setText(R.string.in_process);  break;
             case 2:
-                statusChurch.setText(String.valueOf(R.string.completed));  break;
+                statusChurch.setText(R.string.completed);  break;
         }
 
         statusWall = findViewById(R.id.status_wall);
         switch (manager.getWallStatus()) {
             case 0:
-                statusWall.setText(String.valueOf(R.string.un_completed));  break;
+                statusWall.setText(R.string.un_completed);  break;
             case 1:
-                statusWall.setText(String.valueOf(R.string.in_process));  break;
+                statusWall.setText(R.string.in_process);  break;
             case 2:
-                statusWall.setText(String.valueOf(R.string.completed));  break;
+                statusWall.setText(R.string.completed);  break;
         }
 
         statusFood = findViewById(R.id.status_food);
         switch (manager.getFoodStatus()) {
             case 0:
-                statusFood.setText(String.valueOf(R.string.un_completed));  break;
+                statusFood.setText(R.string.un_completed);  break;
             case 1:
-                statusFood.setText(String.valueOf(R.string.in_process));  break;
+                statusFood.setText(R.string.in_process);  break;
             case 2:
-                statusFood.setText(String.valueOf(R.string.completed));  break;
+                statusFood.setText(R.string.completed);  break;
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -112,30 +112,30 @@ public class WaysActivity extends AppCompatActivity {
 
         switch (manager.getChurchStatus()) {
             case 0:
-                statusChurch.setText(String.valueOf(R.string.un_completed));  break;
+                statusChurch.setText(R.string.un_completed);  break;
             case 1:
-                statusChurch.setText(String.valueOf(R.string.in_process));  break;
+                statusChurch.setText(R.string.in_process);  break;
             case 2:
-                statusChurch.setText(String.valueOf(R.string.completed));  break;
+                statusChurch.setText(R.string.completed);  break;
         }
 
         switch (manager.getWallStatus()) {
             case 0:
-                statusWall.setText(String.valueOf(R.string.un_completed));  break;
+                statusWall.setText(R.string.un_completed);  break;
             case 1:
-                statusWall.setText(String.valueOf(R.string.in_process));  break;
+                statusWall.setText(R.string.in_process);  break;
             case 2:
-                statusWall.setText(String.valueOf(R.string.completed));  break;
+                statusWall.setText(R.string.completed);  break;
         }
 
         statusFood = findViewById(R.id.status_food);
         switch (manager.getFoodStatus()) {
             case 0:
-                statusFood.setText(String.valueOf(R.string.un_completed));  break;
+                statusFood.setText(R.string.un_completed);  break;
             case 1:
-                statusFood.setText(String.valueOf(R.string.in_process));  break;
+                statusFood.setText(R.string.in_process);  break;
             case 2:
-                statusFood.setText(String.valueOf(R.string.completed));  break;
+                statusFood.setText(R.string.completed);  break;
         }
     }
 

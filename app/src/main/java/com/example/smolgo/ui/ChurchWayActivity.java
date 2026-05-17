@@ -19,39 +19,39 @@ import com.example.smolgo.controller.SharedManager;
 // Активность с маршрутом "Храмы Смоленска"
 public class ChurchWayActivity extends AppCompatActivity {
     // Массив с названиями храмов
-    String[] labelsText = {
-            String.valueOf(R.string.way_church_labels_0),
-            String.valueOf(R.string.way_church_labels_1),
-            String.valueOf(R.string.way_church_labels_2),
-            String.valueOf(R.string.way_church_labels_3),
-            String.valueOf(R.string.way_church_labels_4),
-            String.valueOf(R.string.way_church_labels_5),
-            String.valueOf(R.string.way_church_labels_6),
-            String.valueOf(R.string.way_church_labels_7)
+    int[] labelsText = {
+            R.string.way_church_labels_0,
+            R.string.way_church_labels_1,
+            R.string.way_church_labels_2,
+            R.string.way_church_labels_3,
+            R.string.way_church_labels_4,
+            R.string.way_church_labels_5,
+            R.string.way_church_labels_6,
+            R.string.way_church_labels_7
     };
 
     // Массив с местоположением храмов
-    String[] whereText = {
-            String.valueOf(R.string.way_church_where_0),
-            String.valueOf(R.string.way_church_where_1),
-            String.valueOf(R.string.way_church_where_2),
-            String.valueOf(R.string.way_church_where_3),
-            String.valueOf(R.string.way_church_where_4),
-            String.valueOf(R.string.way_church_where_5),
-            String.valueOf(R.string.way_church_where_6),
-            String.valueOf(R.string.way_church_where_7)
+    int[] whereText = {
+            R.string.way_church_where_0,
+            R.string.way_church_where_1,
+            R.string.way_church_where_2,
+            R.string.way_church_where_3,
+            R.string.way_church_where_4,
+            R.string.way_church_where_5,
+            R.string.way_church_where_6,
+            R.string.way_church_where_7
     };
 
     // Массив с описанием храмов
-    String[] aboutText = {
-            String.valueOf(R.string.way_church_about_0),
-            String.valueOf(R.string.way_church_about_1),
-            String.valueOf(R.string.way_church_about_2),
-            String.valueOf(R.string.way_church_about_3),
-            String.valueOf(R.string.way_church_about_4),
-            String.valueOf(R.string.way_church_about_5),
-            String.valueOf(R.string.way_church_about_6),
-            String.valueOf(R.string.way_church_about_7)
+    int[] aboutText = {
+            R.string.way_church_about_0,
+            R.string.way_church_about_1,
+            R.string.way_church_about_2,
+            R.string.way_church_about_3,
+            R.string.way_church_about_4,
+            R.string.way_church_about_5,
+            R.string.way_church_about_6,
+            R.string.way_church_about_7
     };
 
     // Массив с кординатами храмов
@@ -140,7 +140,7 @@ public class ChurchWayActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MapActivity.class);
         intent.putExtra("cord_first", cords[num][0]);
         intent.putExtra("cord_second", cords[num][1]);
-        intent.putExtra("title", String.valueOf(R.string.smolenks_churchs));
+        intent.putExtra("title", R.string.smolenks_churchs);
         intent.putExtra("object", labelsText[num]);
         startActivity(intent);
     }

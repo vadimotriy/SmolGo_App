@@ -19,24 +19,24 @@ import com.example.smolgo.controller.SharedManager;
 // Активность с маршрутом "Гастрономический маршрут"
 public class FoodWayActivity extends AppCompatActivity {
     // Массив с названиями заведений
-    String[] labelsText = {
-            String.valueOf(R.string.way_food_label_0),
-            String.valueOf(R.string.way_food_label_1),
-            String.valueOf(R.string.way_food_label_2)
+    int[] labelsText = {
+            R.string.way_food_label_0,
+            R.string.way_food_label_1,
+            R.string.way_food_label_2
     };
 
     // Массив с местоположением заведений
-    String[] whereText = {
-            String.valueOf(R.string.way_food_where_0),
-            String.valueOf(R.string.way_food_where_1),
-            String.valueOf(R.string.way_food_where_2)
+    int[] whereText = {
+            R.string.way_food_where_0,
+            R.string.way_food_where_1,
+            R.string.way_food_where_2
     };
 
     // Массив с описанием заведений
-    String[] aboutText = {
-            String.valueOf(R.string.way_food_about_0),
-            String.valueOf(R.string.way_food_about_1),
-            String.valueOf(R.string.way_food_about_2)
+    int[] aboutText = {
+            R.string.way_food_about_0,
+            R.string.way_food_about_1,
+            R.string.way_food_about_2
     };
 
     // Массив с кординатами заведений
@@ -115,7 +115,7 @@ public class FoodWayActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MapActivity.class);
         intent.putExtra("cord_first", cords[num][0]);
         intent.putExtra("cord_second", cords[num][1]);
-        intent.putExtra("title", String.valueOf(R.string.gastronom));
+        intent.putExtra("title", R.string.gastronom);
         intent.putExtra("object", labelsText[num]);
         startActivity(intent);
     }

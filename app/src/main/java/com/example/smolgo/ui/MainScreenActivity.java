@@ -136,7 +136,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
     // Загрузка новых новостей
     public void loadNews(View view) {
-        Retrofit builder = new Retrofit.Builder().baseUrl("http://82.23.249.75/")
+        Retrofit builder = new Retrofit.Builder().baseUrl("http://148.253.213.59/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         builder.create(Api.class).getNews().enqueue(new Callback<NewsResponce>() {
@@ -167,11 +167,11 @@ public class MainScreenActivity extends AppCompatActivity {
                     manager.setIsNews(true);
                     updateInformation();
 
-                    Toast.makeText(MainScreenActivity.this, String.valueOf(R.string.updated), LENGTH_SHORT).show();
+                    Toast.makeText(MainScreenActivity.this, R.string.updated, LENGTH_SHORT).show();
                 }
                 // Произошла ошибка с БД на сервере
                 else {
-                    Toast.makeText(MainScreenActivity.this, String.valueOf(R.string.bd_error), LENGTH_SHORT).show();
+                    Toast.makeText(MainScreenActivity.this, R.string.bd_error, LENGTH_SHORT).show();
                 }
             }
 
@@ -179,7 +179,7 @@ public class MainScreenActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<NewsResponce> call, Throwable t) {
                 Log.e("SmolGo_getNews", t.toString());
-                Toast.makeText(MainScreenActivity.this, String.valueOf(R.string.network_error), LENGTH_SHORT).show();
+                Toast.makeText(MainScreenActivity.this, R.string.network_error, LENGTH_SHORT).show();
             }
         });
     }

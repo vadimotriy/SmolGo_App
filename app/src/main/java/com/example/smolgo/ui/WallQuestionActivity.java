@@ -22,12 +22,12 @@ import com.example.smolgo.controller.SharedManager;
 // Активность с викториной "Крепостная стена"
 public class WallQuestionActivity extends AppCompatActivity {
     // Массив с вопросами
-    String[] questionsText = {
-            String.valueOf(R.string.question_wall_questions_0),
-            String.valueOf(R.string.question_wall_questions_1),
-            String.valueOf(R.string.question_wall_questions_2),
-            String.valueOf(R.string.question_wall_questions_3),
-            String.valueOf(R.string.question_wall_questions_4)
+    int[] questionsText = {
+            R.string.question_wall_questions_0,
+            R.string.question_wall_questions_1,
+            R.string.question_wall_questions_2,
+            R.string.question_wall_questions_3,
+            R.string.question_wall_questions_4
     };
 
     // Массив с вариантами ответов

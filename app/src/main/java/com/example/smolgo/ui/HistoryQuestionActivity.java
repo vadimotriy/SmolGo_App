@@ -20,12 +20,12 @@ import com.example.smolgo.controller.SharedManager;
 // Активность с викториной "История Смоленска"
 public class HistoryQuestionActivity extends AppCompatActivity {
     // Массив с вопросами
-    String[] questionsText = {
-            String.valueOf(R.string.question_history_questions_0),
-            String.valueOf(R.string.question_history_questions_1),
-            String.valueOf(R.string.question_history_questions_2),
-            String.valueOf(R.string.question_history_questions_3),
-            String.valueOf(R.string.question_history_questions_4)
+    int[] questionsText = {
+            R.string.question_history_questions_0,
+            R.string.question_history_questions_1,
+            R.string.question_history_questions_2,
+            R.string.question_history_questions_3,
+            R.string.question_history_questions_4
     };
 
     // Массив с вариантами ответов

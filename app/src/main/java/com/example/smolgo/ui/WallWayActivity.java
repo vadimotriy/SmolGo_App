@@ -19,66 +19,66 @@ import com.example.smolgo.controller.SharedManager;
 // Активность с маршрутом "Крепостная стена"
 public class WallWayActivity extends AppCompatActivity {
     // Массив с названиями башен
-    String[] labelsText = {
-            String.valueOf(R.string.way_wall_label_0),
-            String.valueOf(R.string.way_wall_label_1),
-            String.valueOf(R.string.way_wall_label_2),
-            String.valueOf(R.string.way_wall_label_3),
-            String.valueOf(R.string.way_wall_label_4),
-            String.valueOf(R.string.way_wall_label_5),
-            String.valueOf(R.string.way_wall_label_6),
-            String.valueOf(R.string.way_wall_label_7),
-            String.valueOf(R.string.way_wall_label_8),
-            String.valueOf(R.string.way_wall_label_9),
-            String.valueOf(R.string.way_wall_label_10),
-            String.valueOf(R.string.way_wall_label_11),
-            String.valueOf(R.string.way_wall_label_12),
-            String.valueOf(R.string.way_wall_label_13),
-            String.valueOf(R.string.way_wall_label_14),
-            String.valueOf(R.string.way_wall_label_15),
-            String.valueOf(R.string.way_wall_label_16)
+    int[] labelsText = {
+            R.string.way_wall_label_0,
+            R.string.way_wall_label_1,
+            R.string.way_wall_label_2,
+            R.string.way_wall_label_3,
+            R.string.way_wall_label_4,
+            R.string.way_wall_label_5,
+            R.string.way_wall_label_6,
+            R.string.way_wall_label_7,
+            R.string.way_wall_label_8,
+            R.string.way_wall_label_9,
+            R.string.way_wall_label_10,
+            R.string.way_wall_label_11,
+            R.string.way_wall_label_12,
+            R.string.way_wall_label_13,
+            R.string.way_wall_label_14,
+            R.string.way_wall_label_15,
+            R.string.way_wall_label_16
     };
 
     // Массив с местоположением башен
-    String[] whereText = {
-            String.valueOf(R.string.way_wall_where_0),
-            String.valueOf(R.string.way_wall_where_1),
-            String.valueOf(R.string.way_wall_where_2),
-            String.valueOf(R.string.way_wall_where_3),
-            String.valueOf(R.string.way_wall_where_4),
-            String.valueOf(R.string.way_wall_where_5),
-            String.valueOf(R.string.way_wall_where_6),
-            String.valueOf(R.string.way_wall_where_7),
-            String.valueOf(R.string.way_wall_where_8),
-            String.valueOf(R.string.way_wall_where_9),
-            String.valueOf(R.string.way_wall_where_10),
-            String.valueOf(R.string.way_wall_where_11),
-            String.valueOf(R.string.way_wall_where_12),
-            String.valueOf(R.string.way_wall_where_13),
-            String.valueOf(R.string.way_wall_where_14),
-            String.valueOf(R.string.way_wall_where_15),
-            String.valueOf(R.string.way_wall_where_16)
+    int[] whereText = {
+            R.string.way_wall_where_0,
+            R.string.way_wall_where_1,
+            R.string.way_wall_where_2,
+            R.string.way_wall_where_3,
+            R.string.way_wall_where_4,
+            R.string.way_wall_where_5,
+            R.string.way_wall_where_6,
+            R.string.way_wall_where_7,
+            R.string.way_wall_where_8,
+            R.string.way_wall_where_9,
+            R.string.way_wall_where_10,
+            R.string.way_wall_where_11,
+            R.string.way_wall_where_12,
+            R.string.way_wall_where_13,
+            R.string.way_wall_where_14,
+            R.string.way_wall_where_15,
+            R.string.way_wall_where_16
     };
 
     // Массив с описанием башен
-    String[] aboutText = {
-            String.valueOf(R.string.way_wall_about_0),
-            String.valueOf(R.string.way_wall_about_1),
-            String.valueOf(R.string.way_wall_about_2),
-            String.valueOf(R.string.way_wall_about_3),
-            String.valueOf(R.string.way_wall_about_4),
-            String.valueOf(R.string.way_wall_about_5),
-            String.valueOf(R.string.way_wall_about_6),
-            String.valueOf(R.string.way_wall_about_7),
-            String.valueOf(R.string.way_wall_about_8),
-            String.valueOf(R.string.way_wall_about_9),
-            String.valueOf(R.string.way_wall_about_10),
-            String.valueOf(R.string.way_wall_about_11),
-            String.valueOf(R.string.way_wall_about_12),
-            String.valueOf(R.string.way_wall_about_13),
-            String.valueOf(R.string.way_wall_about_14),
-            String.valueOf(R.string.way_wall_about_15),
-            String.valueOf(R.string.way_wall_about_16)
+    int[] aboutText = {
+            R.string.way_wall_about_0,
+            R.string.way_wall_about_1,
+            R.string.way_wall_about_2,
+            R.string.way_wall_about_3,
+            R.string.way_wall_about_4,
+            R.string.way_wall_about_5,
+            R.string.way_wall_about_6,
+            R.string.way_wall_about_7,
+            R.string.way_wall_about_8,
+            R.string.way_wall_about_9,
+            R.string.way_wall_about_10,
+            R.string.way_wall_about_11,
+            R.string.way_wall_about_12,
+            R.string.way_wall_about_13,
+            R.string.way_wall_about_14,
+            R.string.way_wall_about_15,
+            R.string.way_wall_about_16
     };
 
     // Массив с кординатами башен
@@ -185,7 +185,7 @@ public class WallWayActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MapActivity.class);
         intent.putExtra("cord_first", cords[num][0]);
         intent.putExtra("cord_second", cords[num][1]);
-        intent.putExtra("title", String.valueOf(R.string.wall));
+        intent.putExtra("title", R.string.wall);
         intent.putExtra("object", labelsText[num]);
         startActivity(intent);
     }

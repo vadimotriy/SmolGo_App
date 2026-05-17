@@ -65,7 +65,7 @@ public class SignUpActivity extends AppCompatActivity {
         String password = passwordInput.getText().toString();
         RegisterRequest request = new RegisterRequest(name, email, password);
 
-        Retrofit builder = new Retrofit.Builder().baseUrl("http://82.23.249.75/")
+        Retrofit builder = new Retrofit.Builder().baseUrl("http://148.253.213.59/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         builder.create(Api.class).signUp(request).enqueue(new Callback<RegisterResponce>() {
@@ -78,7 +78,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
                 // Email уже занят
                 else {
-                    Toast.makeText(SignUpActivity.this, String.valueOf(R.string.email_used_error), LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, R.string.email_used_error, LENGTH_SHORT).show();
                 }
             }
 
@@ -86,7 +86,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<RegisterResponce> call, Throwable t) {
                 Log.e("SmolGo_SignUp", t.toString());
-                Toast.makeText(SignUpActivity.this, String.valueOf(R.string.network_error), LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, R.string.network_error, LENGTH_SHORT).show();
             }
         });
     }
