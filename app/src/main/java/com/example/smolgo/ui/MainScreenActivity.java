@@ -136,7 +136,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
     // Загрузка новых новостей
     public void loadNews(View view) {
-        Retrofit builder = new Retrofit.Builder().baseUrl("http://148.253.213.59/")
+        Retrofit builder = new Retrofit.Builder().baseUrl("https://blinov.website/smolgo/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         builder.create(Api.class).getNews().enqueue(new Callback<NewsResponce>() {

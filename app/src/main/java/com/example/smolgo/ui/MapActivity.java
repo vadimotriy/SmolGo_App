@@ -26,7 +26,7 @@ import com.yandex.mapkit.map.TextStyle;
 public class MapActivity extends AppCompatActivity {
     MapView mapView;
     TextView title;
-    private String titleText, objectName;
+    private int titleText, objectName;
     private double cordX, cordY;
 
     @Override
@@ -38,8 +38,8 @@ public class MapActivity extends AppCompatActivity {
         Intent intent = getIntent();
         cordX = intent.getDoubleExtra("cord_first", 0.0);
         cordY = intent.getDoubleExtra("cord_second", 0.0);
-        titleText = intent.getStringExtra("title");
-        objectName = intent.getStringExtra("object");
+        titleText = intent.getIntExtra("title", 0);
+        objectName = intent.getIntExtra("object", 0);
 
         mapView = findViewById(R.id.mapview);
         title = findViewById(R.id.titleView);
@@ -64,7 +64,7 @@ public class MapActivity extends AppCompatActivity {
 
         // Текст и его стиль
         TextStyle textStyle = new TextStyle().setSize(15f).setPlacement(TextStyle.Placement.TOP).setOffset(5f);
-        placemark.setText(objectName, textStyle);
+        placemark.setText(getString(objectName), textStyle);
 
         // Иконка и ее стиль
         IconStyle iconStyle = new IconStyle().setScale(0.5f);
