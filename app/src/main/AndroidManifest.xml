@@ -17,6 +17,9 @@
         android:theme="@style/Theme.SmolGo"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.NearDneprQuestActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.HistoryQuestionActivity"
             android:exported="false" />
         <activity

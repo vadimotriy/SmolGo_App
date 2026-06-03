@@ -58,6 +58,12 @@ public class SharedManager {
     public int getMonumentStatus() { return prefs.getInt("monument_status", 0); }
     public void setMonumentStatus(int num) { prefs.edit().putInt("monument_status", num).apply(); }
 
+    // 4 метода для хранения данных про квест "Вдоль Днепра"
+    public int getDnepr() { return prefs.getInt("dnepr", 0); }
+    public void setDnepr(int num) { prefs.edit().putInt("dnepr", num).apply(); }
+    public int getDneprStatus() { return prefs.getInt("dnepr_status", 0); }
+    public void setDneprStatus(int num) { prefs.edit().putInt("dnepr_status", num).apply(); }
+
 
     // 4 метода для хранения данных про маршрут "Крепостная стена"
     public int getWall() { return prefs.getInt("wall", 0); }

@@ -19,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class QuestsActivity extends AppCompatActivity {
     SharedManager manager;
     BottomNavigationView bottomNavigationView;
-    TextView statusMonument, statusMonument2;
+    TextView statusMonument, statusMonument2, statusNearDnepr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +84,15 @@ public class QuestsActivity extends AppCompatActivity {
                 statusMonument2.setText(R.string.completed);  break;
         }
 
+        statusNearDnepr = findViewById(R.id.status_near_dnepr);
+        switch (manager.getDneprStatus()) {
+            case 0:
+                statusNearDnepr.setText(R.string.un_completed);  break;
+            case 1:
+                statusNearDnepr.setText(R.string.in_process);  break;
+            case 2:
+                statusNearDnepr.setText(R.string.completed);  break;
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -115,6 +124,15 @@ public class QuestsActivity extends AppCompatActivity {
             case 2:
                 statusMonument2.setText(R.string.completed);  break;
         }
+
+        switch (manager.getDneprStatus()) {
+            case 0:
+                statusNearDnepr.setText(R.string.un_completed);  break;
+            case 1:
+                statusNearDnepr.setText(R.string.in_process);  break;
+            case 2:
+                statusNearDnepr.setText(R.string.completed);  break;
+        }
     }
 
     // Переход на один из квестов по нажатию по нему
@@ -128,6 +146,13 @@ public class QuestsActivity extends AppCompatActivity {
     public void monument2(View view) {
         manager.setMonumentStatus2(1);
         startActivity(new Intent(this, Monument2QuestActivity.class));
+        overridePendingTransition(0, 0);
+    }
+
+    public void nearDnepr(View view) {
+        manager.setDneprStatus(1);
+        manager.setDnepr(0);
+        startActivity(new Intent(this, NearDneprQuestActivity.class));
         overridePendingTransition(0, 0);
     }
 }

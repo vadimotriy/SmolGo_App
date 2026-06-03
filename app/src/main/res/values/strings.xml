@@ -229,4 +229,5 @@
     <string name="in_process">В процессе</string>
     <string name="completed">Пройдено</string>
     <string name="un_completed">Не пройдено</string>
+    <string name="near_dnepr">Вдоль Днепра</string>
 </resources>
