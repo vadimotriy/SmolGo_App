@@ -151,7 +151,7 @@ public class QuestsActivity extends AppCompatActivity {
 
     public void nearDnepr(View view) {
         manager.setDneprStatus(1);
-        manager.setDnepr(0);
+        manager.setDnepr(3);
         startActivity(new Intent(this, NearDneprQuestActivity.class));
         overridePendingTransition(0, 0);
     }

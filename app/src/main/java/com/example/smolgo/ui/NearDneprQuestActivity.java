@@ -31,12 +31,15 @@ public class NearDneprQuestActivity extends AppCompatActivity {
     ScrollView scrollView;
 
     String[] labelText = {
-      "Добро пожаловать!",
-      "Князь Владимир",
-      "Пятницкие водяные ворота",
-      "Двигайтесь прямо",
-      "Главная святыня Смоленска",
-      ""
+            "Добро пожаловать!",
+            "Князь Владимир",
+            "Пятницкие водяные ворота",
+            "Двигайтесь прямо",
+            "Главная святыня Смоленска",
+            "Двигайтесь к собору",
+            "",
+            "",
+            ""
     };
 
     String[] aboutText = {
@@ -44,6 +47,8 @@ public class NearDneprQuestActivity extends AppCompatActivity {
             "Летом 2015 года на набережной реки Днепр в Смоленске торжественно открыли памятник князю Владимиру. Событие было приурочено к 1000-летию со дня преставления святого равноапостольного князя Владимира. Проект новой смоленской достопримечательности был утвержден Патриархом Московским и всея Руси Кириллом. Святейший принял участие в церемонии открытия и освящении памятника святому князю Владимиру в августе 2015 года. Скульптура служит напоминанием смолянам и гостям города о крещении Руси. Автором скульптуры является смоленский художник Валерий Гращенков. Он изобразил князя Владимира с крестом в одной руке, а другой указывающего на воду (на Днепр), как бы приглашая людей креститься.",
             "Свое название «Пятницкая водяная» башня получила предположительно в период польской осады 1609-1611 годов, так как через эту башню шел забор воды из Днепра через специально прорытый ров, однако возможно, что уже в те времена в городе имелся водопровод. В ночь на 5 ноября (по новому стилю - 17 ноября) 1812 года Пятницкая башня была взорвана оставляющими Смоленск войсками императора Наполеона I. Приблизительно в 1816 году на месте пролома башни была выстроена новая каменная церковь в стиле ампир, стилизованная под древние смоленские башни годуновской крепостной стены. Храм был освящен сначала во имя святого Николая Чудотворца, затем в **** году - во имя святого Тихона Задонского (эта дата золочеными цифрами выбита на верхнем ярусе башни).",
             "Ваше приключение продолжается! Теперь вам предстоит сделать уверенный шаг вперед: двигайтесь прямо, не сворачивая с пути, до тех пор, пока перед вами не откроется дорога. Именно там, на этом новом рубеже, вас будет ждать следующая подсказка и продолжение удивительной истории Смоленска. Внимательно смотрите по сторонам, держите курс и отправляйтесь навстречу новым открытиям. В добрый путь!",
+            "",
+            "Двигайтесь в сторону этой прекрасной архитектурной доминанты, держа её в поле зрения. Пусть его силуэт ведет вас вперед, а на подходе к его стенам вас уже будет ждать новая загадка и продолжение удивительной истории Смоленска. Внимательно смотрите по сторонам, держите курс и отправляйтесь навстречу новым открытиям. В добрый путь!",
             "",
             ""
     };
@@ -53,13 +58,20 @@ public class NearDneprQuestActivity extends AppCompatActivity {
             "Сколько флагов можно увидеть рядом с памятником?",
             "Какой год высечен на храме?",
             "",
-            "Выберите храм, который считается самым главным во всей Смоленской области."
+            "Выберите храм, который считается самым главным во всей Смоленской области.",
+            "",
+            "",
+            "",
+            ""
     };
 
     String[] answersText = {
             "",
             "3",
             "1865",
+            "",
+            "",
+            "",
             "",
             ""
     };
@@ -69,16 +81,11 @@ public class NearDneprQuestActivity extends AppCompatActivity {
             R.drawable.img_dnepr_1,
             R.drawable.img_dnepr_2,
             0,
+            0,
+            0,
+            0,
             0
 
-    };
-
-    int[][] many_images = {
-            {},
-            {},
-            {},
-            {R.drawable.img_dnepr_3_1, R.drawable.img_dnepr_3_2, R.drawable.img_dnepr_3_3, R.drawable.img_dnepr_3_4},
-            {}
     };
 
 
@@ -116,18 +123,24 @@ public class NearDneprQuestActivity extends AppCompatActivity {
     public void nextClick(View view) {
 
         switch (num) {
-            case 0:
+            case 0: case 3: case 5:
                 ++num; break;
             case 1: case 2: case 4:
                 String userAnswer = answer.getText().toString().strip();
                 answer.setText("");
                 if (userAnswer.equals(answersText[num])) ++num;
+                else {
+                    Toast.makeText(this, "Не правильно", LENGTH_SHORT).show();
+                    return;
+                }
                 break;
 
         }
 
+        manager.setDnepr(num);
+
         // Если все памятники пройдены, то переход на активность финиша
-        if (num == 7) {
+        if (num == 9) {
             manager.setDnepr(0); manager.setDneprStatus(2);
             startActivity(new Intent(this, FinalActivity.class));  finish();
         } else {
@@ -137,15 +150,16 @@ public class NearDneprQuestActivity extends AppCompatActivity {
     }
 
     public void nextWay() {
+        Toast.makeText(this, Integer.toString(num), LENGTH_SHORT).show();
         switch (num) {
-            case 0:
+            case 0: case 3: case 5:
                 label.setText(labelText[num]);
                 about.setText(aboutText[num]);
                 image.setVisibility(GONE);
                 answer.setVisibility(GONE);
                 question.setText("");
                 break;
-            case 1: case 2: case 4:
+            case 1: case 2:
                 answer.setVisibility(VISIBLE);
                 image.setVisibility(VISIBLE);
                 label.setText(labelText[num]);
@@ -153,8 +167,10 @@ public class NearDneprQuestActivity extends AppCompatActivity {
                 about.setText(aboutText[num]);
                 image.setImageResource(images[num]);
                 break;
-            case 3:
-
+            case 4:
+                startActivity(new Intent(this, NearDneprQuest2Activity.class));
+                finish();
+                break;
 
         }
     }
