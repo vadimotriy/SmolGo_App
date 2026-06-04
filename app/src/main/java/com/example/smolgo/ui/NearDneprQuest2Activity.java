@@ -6,6 +6,7 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -122,5 +123,9 @@ public class NearDneprQuest2Activity extends AppCompatActivity {        int num;
                 image33.setImageResource(many_images[num][2]);
                 image34.setImageResource(many_images[num][3]);
         }
+    }
+
+    public void backActivity(View view) {
+        finish();
     }
 }

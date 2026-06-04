@@ -74,7 +74,8 @@ public class AchievmetsActivity extends AppCompatActivity {
 
         int waysNum = (manager.getWallStatus() == 2 ? 1 : 0) + (manager.getChurchStatus() == 2 ? 1 : 0)
                 + (manager.getFoodStatus() == 2 ? 1 : 0);
-        int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0) + (manager.getMonumentStatus2() == 2 ? 1 : 0);
+        int questsNum = (manager.getMonumentStatus() == 2 ? 1 : 0) + (manager.getMonumentStatus2() == 2 ? 1 : 0)
+                + (manager.getDneprStatus() == 2 ? 1 : 0);
 
         // Заполнение PorgresBar
         barWays = findViewById(R.id.progressBarWays);

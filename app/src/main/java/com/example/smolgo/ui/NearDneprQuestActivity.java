@@ -37,7 +37,8 @@ public class NearDneprQuestActivity extends AppCompatActivity {
             "Двигайтесь прямо",
             "Главная святыня Смоленска",
             "Двигайтесь к собору",
-            "",
+            "Древний колокол",
+            "Великий полководец",
             "",
             ""
     };
@@ -49,6 +50,8 @@ public class NearDneprQuestActivity extends AppCompatActivity {
             "Ваше приключение продолжается! Теперь вам предстоит сделать уверенный шаг вперед: двигайтесь прямо, не сворачивая с пути, до тех пор, пока перед вами не откроется дорога. Именно там, на этом новом рубеже, вас будет ждать следующая подсказка и продолжение удивительной истории Смоленска. Внимательно смотрите по сторонам, держите курс и отправляйтесь навстречу новым открытиям. В добрый путь!",
             "",
             "Двигайтесь в сторону этой прекрасной архитектурной доминанты, держа её в поле зрения. Пусть его силуэт ведет вас вперед, а на подходе к его стенам вас уже будет ждать новая загадка и продолжение удивительной истории Смоленска. Внимательно смотрите по сторонам, держите курс и отправляйтесь навстречу новым открытиям. В добрый путь!",
+            "Согласно одной из них, этот католический колокол был преподнесен городу в дар в 1700 году, прибыв сюда из Велиарского монастыря*. По другой, не менее захватывающей легенде, когда-то он оглашал своим звоном окрестности костела Святой Анны. Этот храм когда-то возвышался здесь же, на Соборном холме, ровно на том месте, где сегодня стоит величественный памятник Владимиру Мономаху.",
+            "В самом городе полководец ни разу не был, в городах и селах Смоленской губернии он вместе со своей армией отстаивал российские земли, но в Смоленске побывать ему так и не удалось. Однако именно на Смоленской земле он принял назначение стать главнокомандующим российской армии в 1812 году.",
             "",
             ""
     };
@@ -60,7 +63,8 @@ public class NearDneprQuestActivity extends AppCompatActivity {
             "",
             "Выберите храм, который считается самым главным во всей Смоленской области.",
             "",
-            "",
+            "Каким годом датирован этот колокол?",
+            "Кто это?",
             "",
             ""
     };
@@ -72,6 +76,8 @@ public class NearDneprQuestActivity extends AppCompatActivity {
             "",
             "",
             "",
+            "1636",
+            "кутузов",
             "",
             ""
     };
@@ -83,9 +89,10 @@ public class NearDneprQuestActivity extends AppCompatActivity {
             0,
             0,
             0,
+            R.drawable.img_dnepr_4,
+            R.drawable.img_dnepr_5,
             0,
             0
-
     };
 
 
@@ -125,7 +132,7 @@ public class NearDneprQuestActivity extends AppCompatActivity {
         switch (num) {
             case 0: case 3: case 5:
                 ++num; break;
-            case 1: case 2: case 4:
+            case 1: case 2: case 4: case 6: case 7:
                 String userAnswer = answer.getText().toString().strip();
                 answer.setText("");
                 if (userAnswer.equals(answersText[num])) ++num;
@@ -145,7 +152,6 @@ public class NearDneprQuestActivity extends AppCompatActivity {
             startActivity(new Intent(this, FinalActivity.class));  finish();
         } else {
             nextWay();
-            scrollView.post(() -> scrollView.fullScroll(View.FOCUS_UP));
         }
     }
 
@@ -159,19 +165,23 @@ public class NearDneprQuestActivity extends AppCompatActivity {
                 answer.setVisibility(GONE);
                 question.setText("");
                 break;
-            case 1: case 2:
+            case 1: case 2: case 6: case 7:
                 answer.setVisibility(VISIBLE);
                 image.setVisibility(VISIBLE);
                 label.setText(labelText[num]);
                 question.setText(questionText[num]);
                 about.setText(aboutText[num]);
                 image.setImageResource(images[num]);
+                scrollView.post(() -> scrollView.fullScroll(View.FOCUS_UP));
                 break;
             case 4:
                 startActivity(new Intent(this, NearDneprQuest2Activity.class));
                 finish();
                 break;
-
+            case 8:
+                startActivity(new Intent(this, NearDneprQuest3Activity.class));
+                finish();
+                break;
         }
     }
 }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.NearDneprQuest3Activity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/title"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/ic_back"
+            android:gravity="center"
+            android:onClick="backActivity" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="54dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="@string/near_dnepr"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Соберите пазл"
+        android:textAlignment="center"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="32sp" />
+
+    <GridLayout
+        android:layout_gravity="center"
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+
+        android:background="#cccccc"
+        android:columnCount="3"
+        android:rowCount="3">
+    </GridLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:id="@+id/materialButton"
+        android:layout_width="380dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/title"
+        android:fontFamily="@font/roboto_medium"
+        android:onClick="nextClick"
+
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:cornerRadius="16dp"
+        android:visibility="invisible"/>
+
+</LinearLayout>
